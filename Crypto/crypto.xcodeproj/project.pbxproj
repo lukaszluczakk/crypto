@@ -11,6 +11,8 @@
 		F41B29B026A47B4000D7FD7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41B29AF26A47B4000D7FD7E /* ContentView.swift */; };
 		F41B29B226A47B4000D7FD7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41B29B126A47B4000D7FD7E /* Assets.xcassets */; };
 		F41B29B526A47B4000D7FD7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41B29B426A47B4000D7FD7E /* Preview Assets.xcassets */; };
+		F41B29BE26A47C3800D7FD7E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41B29BD26A47C3800D7FD7E /* Color.swift */; };
+		F41B29C326A47C6500D7FD7E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41B29C226A47C6500D7FD7E /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		F41B29B126A47B4000D7FD7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F41B29B426A47B4000D7FD7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F41B29B626A47B4000D7FD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F41B29BD26A47C3800D7FD7E /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		F41B29C226A47C6500D7FD7E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 		F41B29AC26A47B4000D7FD7E /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				F41B29BF26A47C4B00D7FD7E /* Home */,
 				F41B29BC26A47B5600D7FD7E /* Extensions */,
 				F41B29AD26A47B4000D7FD7E /* CryptoApp.swift */,
 				F41B29AF26A47B4000D7FD7E /* ContentView.swift */,
@@ -73,8 +78,33 @@
 		F41B29BC26A47B5600D7FD7E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F41B29BD26A47C3800D7FD7E /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F41B29BF26A47C4B00D7FD7E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F41B29C126A47C5500D7FD7E /* ViewModels */,
+				F41B29C026A47C5000D7FD7E /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F41B29C026A47C5000D7FD7E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F41B29C226A47C6500D7FD7E /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F41B29C126A47C5500D7FD7E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F41B29B026A47B4000D7FD7E /* ContentView.swift in Sources */,
+				F41B29C326A47C6500D7FD7E /* HomeView.swift in Sources */,
 				F41B29AE26A47B4000D7FD7E /* CryptoApp.swift in Sources */,
+				F41B29BE26A47C3800D7FD7E /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
