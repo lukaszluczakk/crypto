@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  crypto
+//  Crypto
 //
 //  Created by Łukasz Łuczak on 18/07/2021.
 //
