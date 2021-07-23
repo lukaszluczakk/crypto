@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import Combine
 
 class CoinDataService {
     @Published var allCoins: [CoinModel] = []
+    
+    var subscription: AnyCancellable?
     
     init() {
         getCoins()
@@ -20,7 +23,7 @@ class CoinDataService {
             return
         }
         
-        URLSession.shared.dataTaskPublisher(for: url)
+        subscription = URLSession.shared.dataTaskPublisher(for: url)
             .subscribe(on: DispatchQueue.global(qos: .default))
             .tryMap { (output) -> Data in
                 guard let response  = output.response as? HTTPURLResponse,
@@ -41,6 +44,7 @@ class CoinDataService {
                 }
             } receiveValue: { [weak self] (coinModels) in
                 self?.allCoins = coinModels
+                self?.subscription?.cancel()
             }
     }
 }
