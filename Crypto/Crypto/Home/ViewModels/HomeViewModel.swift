@@ -21,10 +21,29 @@ class HomeViewModel: ObservableObject {
     }
     
     func addSubscribers(){
-        coinDataService.$allCoins
-            .sink { [weak self] (returnedData) in
-                self?.allCoins = returnedData
+        $searchText
+            .combineLatest(coinDataService.$allCoins)
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
+            .map(filterCoins)
+            .sink { [weak self] (coins) in
+                self?.allCoins = coins
             }
             .store(in: &cancellable)
+    }
+    
+    private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel] {
+        guard !text.isEmpty else {
+            return coins
+        }
+        
+        let lowerCaseText = text.lowercased()
+        
+        let filteredCoins = coins.filter { (coin) -> Bool in
+            return coin.name.lowercased().contains(lowerCaseText)
+                ||  coin.symbol.lowercased().contains(lowerCaseText)
+                ||  coin.id.lowercased().contains(lowerCaseText)
+        }
+        
+        return filteredCoins
     }
 }
