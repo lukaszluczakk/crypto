@@ -25,10 +25,24 @@ struct MarketDataModel: Codable {
     }
     
     var marketCap: String {
-        if let item = totalMarketCap?.first(where: { (key: String, value: Double) -> Bool in
-            return key == "usd"
-        }) {
+        if let item = totalMarketCap?.first(where: { $0.key == "usd" }) {
             return "\(item.value)"
+        }
+        
+        return ""
+    }
+    
+    var volume: String {
+        if let item = totalVolume?.first(where: { $0.key == "usd" }) {
+            return "\(item.value)"
+        }
+        
+        return ""
+    }
+    
+    var btcDominate: String {
+        if let item = marketCapPercentage?.first(where: { $0.key == "btc" }) {
+            return item.value.asPercentString()
         }
         
         return ""
