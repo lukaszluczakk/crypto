@@ -49,6 +49,7 @@ struct HomeView_Previews: PreviewProvider {
             HomeView()
                 .navigationBarHidden(true)
         }
+        .preferredColorScheme(.dark)
         .environmentObject(dev.homeVM)
     }
 }
