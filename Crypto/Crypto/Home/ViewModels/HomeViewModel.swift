@@ -9,18 +9,13 @@ import Foundation
 import Combine
 
 class HomeViewModel: ObservableObject {
-    @Published var statistics: [StatistictModel] = [
-        StatistictModel(title: "Statistic 1", value: "$12.12"),
-        StatistictModel(title: "Statistic 2", value: "$12.12"),
-        StatistictModel(title: "Statistic 3", value: "$12.12"),
-        StatistictModel(title: "Statistic 4", value: "$12.12")
-    ]
-    
+    @Published var statistics: [StatistictModel] = []
     @Published var allCoins: [CoinModel] = []
     @Published var portfolioCoins: [CoinModel] = []
     @Published var searchText: String = ""
     
     private let coinDataService = CoinDataService()
+    private let marketDataService = MarketDataService()
     private var cancellable = Set<AnyCancellable>()
     
     init() {
@@ -34,6 +29,13 @@ class HomeViewModel: ObservableObject {
             .map(filterCoins)
             .sink { [weak self] (coins) in
                 self?.allCoins = coins
+            }
+            .store(in: &cancellable)
+        
+        marketDataService.$marketData
+            .map(mapGlobalMarketData)
+            .sink { [weak self] (returnedStats) in
+                self?.statistics = returnedStats
             }
             .store(in: &cancellable)
     }
@@ -52,5 +54,20 @@ class HomeViewModel: ObservableObject {
         }
         
         return filteredCoins
+    }
+    
+    private func mapGlobalMarketData(marketData: MarketDataModel?) -> [StatistictModel] {
+        var stats: [StatistictModel] = []
+        guard let data = marketData else {
+            return stats
+        }
+        
+        let marketCap = StatistictModel(title: "Market cap", value: data.marketCap, percentageChange: data.marketCapChangePercentage24HUsd)
+        let volumne = StatistictModel(title: "25h volume", value: data.volume)
+        let btcDominate = StatistictModel(title: "BTC dominate", value: data.btcDominate)
+        let portfolio = StatistictModel(title: "Portfolio value", value: "$0.0", percentageChange: 0)
+        
+        stats.append(contentsOf: [marketCap, volumne, btcDominate, portfolio])
+        return stats
     }
 }
