@@ -28,28 +28,34 @@ struct DetailView: View {
     ]
     
     private let spacing: CGFloat = 30
-
+    
     init(coin: CoinModel) {
         _vm = StateObject(wrappedValue: DetailViewModel(coin: coin))
     }
     
     var body: some View {
         ScrollView{
-            VStack(spacing: 20) {
-                Text("")
-                    .frame(height: 150)
-                
-                overviewTitle
-                Divider()
-                overviewGrid
-                
-                additionalTitle
-                Divider()
-                additionalGrid
+            VStack {
+                ChartView(coin: vm.coin)
+                    .padding(.vertical)
+                VStack(spacing: 20) {
+                    overviewTitle
+                    Divider()
+                    overviewGrid
+                    additionalTitle
+                    Divider()
+                    additionalGrid
+                }
+                .padding()
             }
-            .padding()
+            
         }
         .navigationTitle(vm.coin.name)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                navigationBarTrailingItems
+            }
+        }
     }
 }
 
@@ -62,6 +68,16 @@ struct DetailView_Previews: PreviewProvider {
 }
 
 extension DetailView {
+    private var navigationBarTrailingItems: some View {
+        HStack {
+            Text(vm.coin.symbol.uppercased())
+                .font(.headline)
+                .foregroundColor(Color.theme.secondaryText)
+            CoinImageView(coin: vm.coin)
+                .frame(width: 25, height: 25)
+        }
+    }
+    
     private var overviewTitle: some View {
         Text("Overview")
             .font(.title)
@@ -79,11 +95,11 @@ extension DetailView {
     }
     
     private var overviewGrid: some View {
-        Text("Additional details")
-            .font(.title)
-            .bold()
-            .foregroundColor(Color.theme.accent)
-            .frame(maxWidth: .infinity, alignment: .leading)
+        LazyVGrid(columns: columns, alignment: .leading , spacing: spacing, pinnedViews: [], content: {
+            ForEach(vm.overviewStatistics) { stat in
+                StatisticView(stat: stat)
+            }
+        })
     }
     
     private var additionalGrid: some View {
