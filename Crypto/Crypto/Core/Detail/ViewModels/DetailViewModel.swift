@@ -12,6 +12,9 @@ class DetailViewModel: ObservableObject {
     @Published var overviewStatistics: [StatistictModel] = []
     @Published var additionalStatistics: [StatistictModel] = []
     @Published var coin: CoinModel
+    @Published var coinDescription: String? = nil
+    @Published var websiteURL: String? = nil
+    @Published var redditURl: String? = nil
     
     private let coinDetailDataService: CoinDetailDataService
     private var cancellable = Set<AnyCancellable>()
@@ -20,7 +23,7 @@ class DetailViewModel: ObservableObject {
     init(coin: CoinModel) {
         self.coin = coin
         self.coinDetailDataService = CoinDetailDataService(coin: coin)
-        addSubscribers()
+        self.addSubscribers()
     }
     
     private func addSubscribers(){
@@ -30,6 +33,15 @@ class DetailViewModel: ObservableObject {
             .sink { [weak self] (returnedArrays) in
                 self?.overviewStatistics = returnedArrays.overview
                 self?.additionalStatistics = returnedArrays.additional
+            }
+            .store(in: &cancellable)
+        
+        coinDetailDataService.$coinDetails
+            .sink { [weak self] (returnedCoinDetails) in
+                self?.coinDescription = "asdasd asasa dasd asd asd asd sadasd asd asd asd asd asdasdas asd asd asd asd asd as das dasdadasd ad asd asd asd asd as dasdasdsad asas as as asd asdasd asd ad asd asd asd asdasdsdsd asd asd."
+                //self?.coinDescription = returnedCoinDetails?.readbleDescription
+                self?.websiteURL = returnedCoinDetails?.links?.homepage?.first
+                self?.redditURl = returnedCoinDetails?.links?.subredditURL
             }
             .store(in: &cancellable)
     }
