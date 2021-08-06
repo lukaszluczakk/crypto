@@ -18,7 +18,7 @@ struct LaunchView: View {
     
     var body: some View {
         ZStack {
-            Color.launch.background
+            Color.black
                 .ignoresSafeArea()
             
             Image("logo-transparent")

@@ -16,20 +16,25 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                Section(header: Text("Swiftful Thinking")) {
-                    VStack(alignment: .leading) {
-                        Image("logo")
-                            .resizable()
-                            .frame(width: 100, height: 100)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                        Text("asdasd asdasd asdasdasda das dasda sdasdasdasdasdasd asdasd asdasdasdasdasd asd asdasdadadadsasda sdasdasdasdasd sdsd.")
-                            .font(.callout)
-                            .bold()
-                            .foregroundColor(Color.theme.accent)
+            ZStack {
+                Color.theme.background.ignoresSafeArea()
+                List {
+                    Section(header: Text("Swiftful Thinking")) {
+                        VStack(alignment: .leading) {
+                            Image("logo")
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                            Text("asdasd asdasd asdasdasda das dasda sdasdasdasdasdasd asdasd asdasdasdasdasd asd asdasdadadadsasda sdasdasdasdasd sdsd.")
+                                .font(.callout)
+                                .bold()
+                                .foregroundColor(Color.theme.accent)
+                        }
                     }
+                    .listRowBackground(Color.theme.background.opacity(0.5))
                 }
             }
+            
             .listStyle(GroupedListStyle())
             .navigationTitle("Settings")
             .toolbar {

@@ -30,8 +30,8 @@
             filePath = "Crypto/Services/CoinImageService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "downloadCoinImage()"
             landmarkType = "7">
          </BreakpointContent>
