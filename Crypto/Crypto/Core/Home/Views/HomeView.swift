@@ -94,8 +94,10 @@ extension HomeView {
                 .fontWeight(.heavy)
                 .foregroundColor(Color.theme.accent)
                 .animation(.none)
+                .accessibility(identifier: "HomeTitle")
             Spacer()
             CircleButtonView(iconName: "chevron.right")
+                .accessibility(identifier: "HomeViewViewSwitcher")
                 .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
                 .onTapGesture {
                     withAnimation(.spring()) {
