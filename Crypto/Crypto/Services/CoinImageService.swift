@@ -12,6 +12,7 @@ import SwiftUI
 class CoinImageService {
     
     @Published var image: UIImage? = nil
+    private let networkManager: NetworkingManager
     private var imageSubscription: AnyCancellable?
     private let coin: CoinModel
     private let fileManager = LocalFileManager.instance
@@ -19,9 +20,10 @@ class CoinImageService {
     private let imageName : String
     
     
-    init(coin: CoinModel){
+    init(coin: CoinModel, networkManager: NetworkingManager){
         self.coin = coin
         self.imageName = coin.id
+        self.networkManager = networkManager
         getCoinImage()
     }
     
@@ -39,12 +41,12 @@ class CoinImageService {
             return
         }
         
-        imageSubscription = NetworkingManager.download(url: url)
+        imageSubscription = networkManager.download(url: url)
             .tryMap({ (data) -> UIImage? in
                 return UIImage(data: data)
             })
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedImage) in
+            .sink(receiveCompletion: self.networkManager.handleCompletion, receiveValue: { [weak self] (returnedImage) in
                 print("image downloaded")
                 guard let self = self, let downloadedImage = returnedImage else { return }
                 self.image = returnedImage

@@ -20,9 +20,9 @@ class DetailViewModel: ObservableObject {
     private var cancellable = Set<AnyCancellable>()
     
     
-    init(coin: CoinModel) {
+    init(coin: CoinModel, networkManager: NetworkingManager) {
         self.coin = coin
-        self.coinDetailDataService = CoinDetailDataService(coin: coin)
+        self.coinDetailDataService = CoinDetailDataService(coin: coin, networkManager: networkManager)
         self.addSubscribers()
     }
     

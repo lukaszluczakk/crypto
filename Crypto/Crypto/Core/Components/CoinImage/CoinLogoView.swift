@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct CoinLogoView: View {
+    private let networkManager: NetworkingManager
+    
     let coin: CoinModel
+    
+    init(coin: CoinModel, networkManager: NetworkingManager) {
+        self.coin = coin
+        self.networkManager = networkManager
+    }
     
     var body: some View {
         VStack {
-            CoinImageView(coin: coin)
+            CoinImageView(coin: coin, networkManager: self.networkManager)
                 .frame(width: 50, height: 50)
             Text(coin.symbol.uppercased())
                 .font(.headline)
@@ -33,9 +40,9 @@ struct CoinLogoView: View {
 struct CoinLogoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CoinLogoView(coin: dev.coin)
+            CoinLogoView(coin: dev.coin, networkManager: dev.networkManager)
                 .previewLayout(.sizeThatFits)
-            CoinLogoView(coin: dev.coin)
+            CoinLogoView(coin: dev.coin, networkManager: dev.networkManager)
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)
         }

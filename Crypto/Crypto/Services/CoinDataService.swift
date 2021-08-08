@@ -9,11 +9,14 @@ import Foundation
 import Combine
 
 class CoinDataService {
+    private var networkManager: NetworkingManager
+    
     @Published var allCoins: [CoinModel] = []
     
     var subscription: AnyCancellable?
     
-    init() {
+    init(networkManager: NetworkingManager) {
+        self.networkManager = networkManager
         getCoins()
     }
     
@@ -23,10 +26,10 @@ class CoinDataService {
             return
         }
         
-        subscription = NetworkingManager.download(url: url)
+        subscription = networkManager.download(url: url)
             .decode(type: [CoinModel].self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedData) in
+            .sink(receiveCompletion: networkManager.handleCompletion, receiveValue: { [weak self] (returnedData) in
                 self?.allCoins = returnedData
                 self?.subscription?.cancel() 
             })

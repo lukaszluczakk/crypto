@@ -15,12 +15,18 @@ struct HomeView: View {
     @State private var showDetailView: Bool = false
     @State private var showSettingsView: Bool = false
     
+    private let networkManager: NetworkingManager
+    
+    init(networkManager: NetworkingManager) {
+        self.networkManager = networkManager
+    }
+    
     var body: some View {
         ZStack {
             Color.theme.background
                 .ignoresSafeArea()
                 .sheet(isPresented: $showPortfolioView, content: {
-                    PortfolioView()
+                    PortfolioView(networkManager: networkManager)
                         .environmentObject(vm)
                 })
             
@@ -53,7 +59,7 @@ struct HomeView: View {
             })
         }
         .background(NavigationLink(
-                        destination: DetailLoadingView(coin: $selectedCoin),
+                        destination: DetailLoadingView(coin: $selectedCoin, networkManager: networkManager),
                         isActive: $showDetailView,
                         label: {
                             EmptyView()
@@ -65,7 +71,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HomeView()
+            HomeView(networkManager: dev.networkManager)
                 .navigationBarHidden(true)
         }
         .preferredColorScheme(.dark)
@@ -110,7 +116,7 @@ extension HomeView {
     private var allCoinsList: some View {
         List {
             ForEach (vm.allCoins) { coin in
-                CoinRowView(coin: coin, showHoldingsColumn: false)
+                CoinRowView(coin: coin, showHoldingsColumn: false, networkManager: networkManager)
                     .listRowInsets(.init(top: 19, leading: 0, bottom: 10, trailing: 10))
                     .onTapGesture {
                         segue(coin: coin)
@@ -129,7 +135,7 @@ extension HomeView {
     private var portfolioCoinsList: some View {
         List {
             ForEach (vm.portfolioCoins) { coin in
-                CoinRowView(coin: coin, showHoldingsColumn: true)
+                CoinRowView(coin: coin, showHoldingsColumn: true, networkManager: networkManager)
                     .listRowInsets(.init(top: 19, leading: 0, bottom: 10, trailing: 10))
                     .onTapGesture {
                         segue(coin: coin)

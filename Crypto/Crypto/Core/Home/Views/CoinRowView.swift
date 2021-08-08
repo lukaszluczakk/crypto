@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct CoinRowView: View {
-    let coin: CoinModel
-    let showHoldingsColumn: Bool
+    private let coin: CoinModel
+    private let showHoldingsColumn: Bool
+    private let networkManager: NetworkingManager
+    
+    init(coin: CoinModel, showHoldingsColumn: Bool, networkManager: NetworkingManager) {
+        self.coin = coin
+        self.showHoldingsColumn = showHoldingsColumn
+        self.networkManager = networkManager
+    }
     
     var body: some View {
         HStack(spacing: 0) {
@@ -27,9 +34,9 @@ struct CoinRowView: View {
 struct CoinRowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CoinRowView(coin: dev.coin, showHoldingsColumn: true)
+            CoinRowView(coin: dev.coin, showHoldingsColumn: true, networkManager: dev.networkManager)
                 .previewLayout(.sizeThatFits)
-            CoinRowView(coin: dev.coin, showHoldingsColumn: true)
+            CoinRowView(coin: dev.coin, showHoldingsColumn: true, networkManager: dev.networkManager)
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
         }
@@ -44,7 +51,7 @@ extension CoinRowView {
                 .font(.caption)
                 .foregroundColor(Color.theme.secondaryText)
                 .frame(minWidth: 30)
-            CoinImageView(coin: coin)
+            CoinImageView(coin: coin, networkManager: networkManager)
                 .frame(width: 30, height: 30)
             Text(coin.symbol.uppercased())
                 .accessibility(identifier: "CoinSymbolText")

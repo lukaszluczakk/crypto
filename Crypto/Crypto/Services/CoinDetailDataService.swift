@@ -11,11 +11,13 @@ import Combine
 class CoinDetailDataService {
     @Published var coinDetails: CoinDetailModel? = nil
     
+    private let networkManager: NetworkingManager
     var coinDetailSubscription: AnyCancellable?
     let coin: CoinModel
     
-    init(coin: CoinModel) {
+    init(coin: CoinModel, networkManager: NetworkingManager) {
         self.coin = coin
+        self.networkManager = networkManager
         getCoinDetails()
     }
     
@@ -25,10 +27,10 @@ class CoinDetailDataService {
             return
         }
         
-        coinDetailSubscription = NetworkingManager.download(url: url)
+        coinDetailSubscription = networkManager.download(url: url)
             .decode(type: CoinDetailModel.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedData) in
+            .sink(receiveCompletion: networkManager.handleCompletion, receiveValue: { [weak self] (returnedData) in
                 self?.coinDetails = returnedData
                 self?.coinDetailSubscription?.cancel()
             })

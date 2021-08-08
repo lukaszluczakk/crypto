@@ -9,11 +9,17 @@ import SwiftUI
 
 struct DetailLoadingView: View {
     @Binding var coin: CoinModel?
+    private let networkManager: NetworkingManager
+    
+    init(coin: Binding<CoinModel?>, networkManager: NetworkingManager) {
+        self._coin = coin
+        self.networkManager = networkManager
+    }
     
     var body: some View {
         ZStack {
             if let coin = coin {
-                DetailView(coin: coin)
+                DetailView(coin: coin, networkManager: networkManager)
             }
         }
     }
@@ -29,9 +35,11 @@ struct DetailView: View {
     ]
     
     private let spacing: CGFloat = 30
+    private let networkManager: NetworkingManager
     
-    init(coin: CoinModel) {
-        _vm = StateObject(wrappedValue: DetailViewModel(coin: coin))
+    init(coin: CoinModel, networkManager: NetworkingManager) {
+        self.networkManager = networkManager
+        _vm = StateObject(wrappedValue: DetailViewModel(coin: coin, networkManager: networkManager))
     }
     
     var body: some View {
@@ -65,7 +73,7 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            DetailView(coin: dev.coin)
+            DetailView(coin: dev.coin, networkManager: dev.networkManager)
         }
     }
 }
@@ -76,7 +84,7 @@ extension DetailView {
             Text(vm.coin.symbol.uppercased())
                 .font(.headline)
                 .foregroundColor(Color.theme.secondaryText)
-            CoinImageView(coin: vm.coin)
+            CoinImageView(coin: vm.coin, networkManager: networkManager)
                 .frame(width: 25, height: 25)
         }
     }

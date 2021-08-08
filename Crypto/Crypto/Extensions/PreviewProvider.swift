@@ -16,16 +16,18 @@ extension PreviewProvider {
 
 class DeveloperPreview {
     static let instance = DeveloperPreview()
-    private init() {
-        
-    }
+    let networkManager: NetworkingManager
     
-    let homeVM = HomeViewModel()
+    let homeVM: HomeViewModel
+    
+    private init() {
+        self.networkManager = NetworkManager()
+        self.homeVM = HomeViewModel(networkManager: self.networkManager)
+    }
     
     let stat1 = StatistictModel(title: "Market cup", value: "$12.5Bn", percentageChange: 25.34)
     let stat2 = StatistictModel(title: "Total volume", value: "$1.123Tr")
     let stat3 = StatistictModel(title: "Portfolio value", value: "$50.4k", percentageChange: -12.34)
-    
     
     let coin = CoinModel(
        id: "bitcoin",

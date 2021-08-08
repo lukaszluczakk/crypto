@@ -13,6 +13,12 @@ struct PortfolioView: View {
     @State private var quantityText: String = ""
     @State private var showCheckmark: Bool = false
     
+    private let networkManager: NetworkingManager
+    
+    init(networkManager: NetworkingManager) {
+        self.networkManager = networkManager
+    }
+    
     var body: some View {
         NavigationView {
             ScrollView{
@@ -46,7 +52,7 @@ struct PortfolioView: View {
 
 struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {
-        PortfolioView()
+        PortfolioView(networkManager: dev.networkManager)
             .environmentObject(dev.homeVM)
     }
 }
@@ -56,7 +62,7 @@ extension PortfolioView {
         ScrollView(.horizontal, showsIndicators: false, content: {
             LazyHStack (spacing: 10) {
                 ForEach(vm.searchText.isEmpty ? vm.portfolioCoins : vm.allCoins) { coin in
-                    CoinLogoView(coin: coin)
+                    CoinLogoView(coin: coin, networkManager: networkManager)
                         .frame(width: 75)
                         .onTapGesture {
                             withAnimation(.easeIn) {

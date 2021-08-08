@@ -11,9 +11,11 @@ import Combine
 class MarketDataService {
     @Published var marketData: MarketDataModel? = nil
     
+    private let networkManager: NetworkingManager
     var marketDatasubscription: AnyCancellable?
     
-    init() {
+    init(networkManager: NetworkingManager) {
+        self.networkManager = networkManager
         getData()
     }
 
@@ -23,10 +25,10 @@ class MarketDataService {
             return
         }
         
-        marketDatasubscription = NetworkingManager.download(url: url)
+        marketDatasubscription = networkManager.download(url: url)
             .decode(type: GlobalData.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedGlobalData) in
+            .sink(receiveCompletion: networkManager.handleCompletion, receiveValue: { [weak self] (returnedGlobalData) in
                 self?.marketData = returnedGlobalData.data
                 self?.marketDatasubscription?.cancel()
             })
