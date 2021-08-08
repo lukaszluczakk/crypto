@@ -34,4 +34,16 @@ class CryptoUITests: XCTestCase {
         let homeTitle = app.staticTexts["HomeTitle"]
         XCTAssertEqual("Live prices", homeTitle.label)
     }
+    
+    func testSearchHBTC() throws {
+        let hbtc = "HBTC"
+        let searchTextField = app.textFields["SearchTextField"]
+        searchTextField.tap()
+        searchTextField.typeText(hbtc)
+        sleep(1)
+        let coinSymbolTextsCount = app.staticTexts.matching(identifier: "CoinSymbolText").count
+        let coinSymbolTextLabel = app.staticTexts["CoinSymbolText"].label
+        XCTAssertEqual(1, coinSymbolTextsCount)
+        XCTAssertEqual(hbtc, coinSymbolTextLabel)
+    }
 }

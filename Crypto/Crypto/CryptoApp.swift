@@ -20,22 +20,13 @@ struct CryptoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                NavigationView {
-                    HomeView()
-                        .navigationBarHidden(true)
-                }
-                .navigationViewStyle(StackNavigationViewStyle())
-                .environmentObject(vm)
-                
-                ZStack {
-                    if showLaunchView {
-                        LaunchView(showLaunchView: $showLaunchView)
-                            .transition(.move(edge: .leading))
-                    }
-                }
-                .zIndex(2.0)
+            NavigationView {
+                HomeView()
+                    .navigationBarHidden(true)
             }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .environmentObject(vm)
+
             
         }
     }

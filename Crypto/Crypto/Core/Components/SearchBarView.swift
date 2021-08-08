@@ -16,6 +16,7 @@ struct SearchBarView: View {
                 .disableAutocorrection(true)
                 .foregroundColor(searchText.isEmpty ? Color.theme.secondaryText : Color.theme.accent)
             TextField("Search by name or symbol...", text: $searchText)
+                .accessibility(identifier: "SearchTextField")
                 .foregroundColor(Color.theme.accent)
                 .overlay(
                     Image(systemName: "xmark.circle.fill")
@@ -29,6 +30,7 @@ struct SearchBarView: View {
                         },
                     alignment: .trailing
                 )
+
         }
         .font(.headline)
         .padding()
