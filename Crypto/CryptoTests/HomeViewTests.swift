@@ -6,5 +6,83 @@
 //
 
 import XCTest
+import Combine
 @testable import Crypto
 
+class NetworkManagerMock: NetworkingManager {
+    private let publisher: CurrentValueSubject<Data, Error>
+    
+    init() {
+        self.publisher = CurrentValueSubject<Data, Error>(Data())
+    }
+    
+    func download(url: URL) -> AnyPublisher<Data, Error> {
+        return publisher.eraseToAnyPublisher()
+    }
+    
+    func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {
+        return output.data
+    }
+    
+    func handleCompletion(completion: Subscribers.Completion<Error>) {
+        
+    }
+    
+    func send(coins: [CoinModel]) {
+        let encoded = try! JSONEncoder().encode(coins)
+        publisher.send(encoded)
+    }
+}
+
+class HomeViewModelTests: XCTestCase {
+    
+    
+    func testTest(){
+        let networkManagerMock = NetworkManagerMock()
+        let coinDataService = CoinDataService(networkManager: networkManagerMock)
+        var cancellable = Set<AnyCancellable>()
+        let exp = expectation(description: "Wait for returns")
+        coinDataService.$allCoins.sink { (returnedCoins) in
+            print(returnedCoins.count)
+            if returnedCoins.count == 1 {
+                exp.fulfill()
+            }
+        }.store(in: &cancellable)
+        networkManagerMock.send(coins: [createCoinModel()])
+        wait(for: [exp], timeout: 30)
+    }
+    
+    func createCoinModel() -> CoinModel {
+        return CoinModel(
+            id: "bitcoin",
+            symbol: "btc",
+            name: "Bitcoin",
+            image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
+            currentPrice: 150,
+            marketCap: 1141731099010,
+            marketCapRank: 1,
+            fullyDilutedValuation: 1285385611303,
+            totalVolume: 67190952980,
+            high24H: 61712,
+            low24H: 56220,
+            priceChange24H: 3952.64,
+            priceChangePercentage24H: 6.87944,
+            marketCapChange24H: 72110681879,
+            marketCapChangePercentage24H: 6.74171,
+            circulatingSupply: 18653043,
+            totalSupply: 21000000,
+            maxSupply: 21000000,
+            ath: 61712,
+            athChangePercentage: -0.97589,
+            athDate: "2021-03-13T20:49:26.606Z",
+            atl: 67.81,
+            atlChangePercentage: 90020.24075,
+            atlDate: "2013-07-06T00:00:00.000Z",
+            lastUpdated: "2021-03-13T23:18:10.268Z",
+            sparklineIn7D: SparklineIn7D(price: [
+                54019.26878317463,
+            ]),
+            priceChangePercentage24HInCurrency: 3952.64,
+            currentHoldings: 2.0)
+    }
+}
