@@ -9,47 +9,21 @@ import XCTest
 import Combine
 @testable import Crypto
 
-class NetworkManagerMock: NetworkingManager {
-    private let publisher: CurrentValueSubject<Data, Error>
-    
-    init() {
-        self.publisher = CurrentValueSubject<Data, Error>(Data())
-    }
-    
-    func download(url: URL) -> AnyPublisher<Data, Error> {
-        return publisher.eraseToAnyPublisher()
-    }
-    
-    func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {
-        return output.data
-    }
-    
-    func handleCompletion(completion: Subscribers.Completion<Error>) {
-        
-    }
-    
-    func send(coins: [CoinModel]) {
-        let encoded = try! JSONEncoder().encode(coins)
-        publisher.send(encoded)
-    }
-}
-
-class HomeViewModelTests: XCTestCase {
-    
-    
-    func testTest(){
-        let networkManagerMock = NetworkManagerMock()
+class CoinDataServiceTests: XCTestCase {
+    func testAllCoinsPublishedProperty(){
+        let networkManagerMock:NetworkingManager = NetworkManagerMock()
         let coinDataService = CoinDataService(networkManager: networkManagerMock)
         var cancellable = Set<AnyCancellable>()
         let exp = expectation(description: "Wait for returns")
         coinDataService.$allCoins.sink { (returnedCoins) in
-            print(returnedCoins.count)
-            if returnedCoins.count == 1 {
+            if (returnedCoins.count > 0) {
+                XCTAssertEqual(1, returnedCoins.count)
+                XCTAssertEqual("Bitcoin", returnedCoins[0].name)
                 exp.fulfill()
             }
         }.store(in: &cancellable)
-        networkManagerMock.send(coins: [createCoinModel()])
-        wait(for: [exp], timeout: 30)
+        (networkManagerMock as! NetworkManagerMock).send(coins: [createCoinModel()])
+        wait(for: [exp], timeout: 0.5)
     }
     
     func createCoinModel() -> CoinModel {
@@ -84,5 +58,35 @@ class HomeViewModelTests: XCTestCase {
             ]),
             priceChangePercentage24HInCurrency: 3952.64,
             currentHoldings: 2.0)
+    }
+}
+
+class NetworkManagerMock: NetworkingManager {
+    private let publisher: PassthroughSubject<Data, Error>
+    
+    init() {
+        self.publisher = PassthroughSubject<Data, Error>()
+    }
+    
+    func download(url: URL) -> AnyPublisher<Data, Error> {
+        return publisher.eraseToAnyPublisher()
+    }
+    
+    func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {
+        return output.data
+    }
+    
+    func handleCompletion(completion: Subscribers.Completion<Error>) {
+        switch completion {
+        case .finished:
+            break
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
+    }
+    
+    func send(coins: [CoinModel]) {
+        let encoded = try! JSONEncoder().encode(coins)
+        publisher.send(encoded)
     }
 }
