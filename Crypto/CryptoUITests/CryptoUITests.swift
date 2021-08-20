@@ -13,7 +13,6 @@ class CryptoUITests: XCTestCase {
     override func setUp() {
         continueAfterFailure = false
         app = XCUIApplication()
-        //app.launchArguments = ["testing"]
         app.launch()
     }
     

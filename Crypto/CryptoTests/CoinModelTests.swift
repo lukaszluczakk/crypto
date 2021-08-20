@@ -11,20 +11,20 @@ import XCTest
 class CoinModelTests: XCTestCase {
     
     func testCurrentHoldingsValue() {
-        let coin1 = createCoinModel()
+        let coin1 = createCoinModel(currentPrice: 150, currentHoldings: 2)
         XCTAssertEqual(300, coin1.currentHoldingsValue)
         
         let coin2 = coin1.updateHoldings(amount: 2.25)
         XCTAssertEqual(337.50, coin2.currentHoldingsValue)
     }
     
-    func createCoinModel() -> CoinModel {
+    func createCoinModel(currentPrice: Double, currentHoldings: Double) -> CoinModel {
         return CoinModel(
             id: "bitcoin",
             symbol: "btc",
             name: "Bitcoin",
             image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
-            currentPrice: 150,
+            currentPrice: currentPrice,
             marketCap: 1141731099010,
             marketCapRank: 1,
             fullyDilutedValuation: 1285385611303,
@@ -49,6 +49,6 @@ class CoinModelTests: XCTestCase {
                 54019.26878317463,
             ]),
             priceChangePercentage24HInCurrency: 3952.64,
-            currentHoldings: 2.0)
+            currentHoldings: currentHoldings)
     }
 }

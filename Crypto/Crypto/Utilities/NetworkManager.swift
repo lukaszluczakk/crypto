@@ -7,7 +7,8 @@
 
 import Foundation
 import Combine
-class NetworkManager: NetworkingManager {
+
+final class NetworkManager: NetworkingManager {
     
     enum NetworkManageError: LocalizedError {
         case badURLResponse(url: URL)

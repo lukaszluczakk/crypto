@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StatistictModel : Identifiable {
+struct StatistictModel : Identifiable {
     let id = UUID().uuidString
     let title: String
     let value: String

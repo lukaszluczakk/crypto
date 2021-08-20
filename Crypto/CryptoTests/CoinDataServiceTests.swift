@@ -11,7 +11,7 @@ import Combine
 
 class CoinDataServiceTests: XCTestCase {
     func testAllCoinsPublishedProperty(){
-        let networkManagerMock:NetworkingManager = NetworkManagerMock()
+        let networkManagerMock = NetworkManagerMock()
         let coinDataService = CoinDataService(networkManager: networkManagerMock)
         var cancellable = Set<AnyCancellable>()
         let exp = expectation(description: "Wait for returns")
@@ -22,8 +22,8 @@ class CoinDataServiceTests: XCTestCase {
                 exp.fulfill()
             }
         }.store(in: &cancellable)
-        (networkManagerMock as! NetworkManagerMock).send(coins: [createCoinModel()])
-        wait(for: [exp], timeout: 0.5)
+        networkManagerMock.send(coins: [createCoinModel()])
+        wait(for: [exp], timeout: 0.1)
     }
     
     func createCoinModel() -> CoinModel {
@@ -76,14 +76,7 @@ class NetworkManagerMock: NetworkingManager {
         return output.data
     }
     
-    func handleCompletion(completion: Subscribers.Completion<Error>) {
-        switch completion {
-        case .finished:
-            break
-        case .failure(let error):
-            print(error.localizedDescription)
-        }
-    }
+    func handleCompletion(completion: Subscribers.Completion<Error>) { }
     
     func send(coins: [CoinModel]) {
         let encoded = try! JSONEncoder().encode(coins)
