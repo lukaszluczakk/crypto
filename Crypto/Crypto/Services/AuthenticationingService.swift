@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AuthenticationingService {
-    func Register(email: String, password: String) -> Bool
+    func register(email: String, password: String)
 }

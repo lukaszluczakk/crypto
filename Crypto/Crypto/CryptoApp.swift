@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Firebase
 @main
 struct CryptoApp: App {
     @StateObject private var vm: HomeViewModel
@@ -14,6 +14,7 @@ struct CryptoApp: App {
     private let networkManager: NetworkingManager
     
     init() {
+        FirebaseApp.configure()
         self.networkManager = NetworkManager()
         let homeViewModel = HomeViewModel(networkManager:  self.networkManager)
         self._vm = StateObject(wrappedValue: homeViewModel)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @StateObject var vm: RegisterViewModel = RegisterViewModel()
+    @StateObject var vm: RegisterViewModel = RegisterViewModel(authenticationService: FirebaseAuthenticationService())
     
     var body: some View {
         Text("Register view")

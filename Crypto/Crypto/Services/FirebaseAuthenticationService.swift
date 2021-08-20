@@ -9,7 +9,15 @@ import Foundation
 import FirebaseAuth
 
 final class FirebaseAuthenticationService: AuthenticationingService {
-    func Register(email: String, password: String) -> Bool {
-        return true
+    @Published var signedIn = true
+
+    func register(email: String, password: String) {
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            guard authResult != nil, error == nil else {
+                return
+            }
+            
+            self.signedIn = true
+        }
     }
 }
