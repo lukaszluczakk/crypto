@@ -8,6 +8,10 @@
 import Foundation
 
 final class RegisterViewModel: ObservableObject {
+    
+    @Published var email: String = ""
+    @Published var password: String = ""
+    
     private let authenticationService: AuthenticationingService
     
     init(authenticationService: AuthenticationingService) {
