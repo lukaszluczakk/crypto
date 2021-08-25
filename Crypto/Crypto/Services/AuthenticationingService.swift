@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AuthenticationingService {
-    func register(email: String, password: String)
+    func register(email: String, password: String, completion: @escaping (Bool) -> Void)
 }

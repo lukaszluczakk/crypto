@@ -11,13 +11,14 @@ import FirebaseAuth
 final class FirebaseAuthenticationService: AuthenticationingService {
     @Published var signedIn = true
 
-    func register(email: String, password: String) {
+    func register(email: String, password: String, completion: @escaping (Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             guard authResult != nil, error == nil else {
+                completion(false)
                 return
             }
             
-            self.signedIn = true
+            completion(true)
         }
     }
 }
