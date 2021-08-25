@@ -59,27 +59,28 @@ class CoinDataServiceTests: XCTestCase {
             priceChangePercentage24HInCurrency: 3952.64,
             currentHoldings: 2.0)
     }
-}
+    
+    class NetworkManagerMock: NetworkingManager {
+        private let publisher: PassthroughSubject<Data, Error>
+        
+        init() {
+            self.publisher = PassthroughSubject<Data, Error>()
+        }
+        
+        func download(url: URL) -> AnyPublisher<Data, Error> {
+            return publisher.eraseToAnyPublisher()
+        }
+        
+        func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {
+            return output.data
+        }
+        
+        func handleCompletion(completion: Subscribers.Completion<Error>) { }
+        
+        func send(coins: [CoinModel]) {
+            let encoded = try! JSONEncoder().encode(coins)
+            publisher.send(encoded)
+        }
+    }
 
-class NetworkManagerMock: NetworkingManager {
-    private let publisher: PassthroughSubject<Data, Error>
-    
-    init() {
-        self.publisher = PassthroughSubject<Data, Error>()
-    }
-    
-    func download(url: URL) -> AnyPublisher<Data, Error> {
-        return publisher.eraseToAnyPublisher()
-    }
-    
-    func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {
-        return output.data
-    }
-    
-    func handleCompletion(completion: Subscribers.Completion<Error>) { }
-    
-    func send(coins: [CoinModel]) {
-        let encoded = try! JSONEncoder().encode(coins)
-        publisher.send(encoded)
-    }
 }

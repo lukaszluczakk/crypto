@@ -10,11 +10,11 @@ target 'Crypto' do
   
   target 'CryptoTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'Firebase/Auth'
   end
 
   target 'CryptoUITests' do
-    # Pods for testing
+    pod 'Firebase/Auth'
   end
 
 end

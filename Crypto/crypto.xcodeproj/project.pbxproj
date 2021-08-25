@@ -58,6 +58,10 @@
 		F4B7FF8E26C0188400AE8AFA /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B7FF8D26C0188400AE8AFA /* NetworkingManager.swift */; };
 		F4C583BA26B9CC08000BFECA /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C583B926B9CC08000BFECA /* ChartView.swift */; };
 		F4C583BC26B9D24E000BFECA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C583BB26B9D24E000BFECA /* Date.swift */; };
+		F4C6A48A26D6744000DA7DA0 /* RegisterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6A48926D6744000DA7DA0 /* RegisterViewModelTests.swift */; };
+		F4C6A48B26D6779600DA7DA0 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C985526D0095E00143185 /* RegisterViewModel.swift */; };
+		F4C6A48C26D6779D00DA7DA0 /* AuthenticationingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C985926D009EA00143185 /* AuthenticationingService.swift */; };
+		F4C6A48E26D6780000DA7DA0 /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C6A48D26D6780000DA7DA0 /* FBLPromises.framework */; };
 		F4C85B6626B88810009C590A /* CoinModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C85B6526B88810009C590A /* CoinModelTests.swift */; };
 		F4D7E46E26C19C54007AB772 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48DC88226A72A9D00254A6D /* CoinModel.swift */; };
 		F4D7E46F26C19C78007AB772 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B7FF8D26C0188400AE8AFA /* NetworkingManager.swift */; };
@@ -143,6 +147,8 @@
 		F4B7FF8D26C0188400AE8AFA /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		F4C583B926B9CC08000BFECA /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		F4C583BB26B9D24E000BFECA /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		F4C6A48926D6744000DA7DA0 /* RegisterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModelTests.swift; sourceTree = "<group>"; };
+		F4C6A48D26D6780000DA7DA0 /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBLPromises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C85B5B26B887C3009C590A /* CryptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C85B5F26B887C3009C590A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4C85B6526B88810009C590A /* CoinModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModelTests.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C6A48E26D6780000DA7DA0 /* FBLPromises.framework in Frameworks */,
 				867CF9E00B9006BEC8DB9680 /* Pods_CryptoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +427,7 @@
 			children = (
 				F44F34D826BED2B800FBA42A /* CoinDataServiceTests.swift */,
 				F4C85B6526B88810009C590A /* CoinModelTests.swift */,
+				F4C6A48926D6744000DA7DA0 /* RegisterViewModelTests.swift */,
 				F4C85B5F26B887C3009C590A /* Info.plist */,
 			);
 			path = CryptoTests;
@@ -467,6 +475,7 @@
 		FEA1C7B8FA823A873492CCB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4C6A48D26D6780000DA7DA0 /* FBLPromises.framework */,
 				1D84B600D66119D18ACC7D88 /* Pods_Crypto.framework */,
 				B485EF1652C5A99CEB4F5EC3 /* Pods_Crypto_CryptoUITests.framework */,
 				FD55EAD58C940BCB0CFE41F9 /* Pods_CryptoTests.framework */,
@@ -524,6 +533,7 @@
 				F4C85B5726B887C3009C590A /* Sources */,
 				F4C85B5826B887C3009C590A /* Frameworks */,
 				F4C85B5926B887C3009C590A /* Resources */,
+				1025AB5AF47BF9FD69D5E9CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -605,6 +615,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1025AB5AF47BF9FD69D5E9CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoTests/Pods-CryptoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoTests/Pods-CryptoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CryptoTests/Pods-CryptoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		192CCD4E25E7F6CC967B1BF4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -770,9 +797,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C6A48C26D6779D00DA7DA0 /* AuthenticationingService.swift in Sources */,
+				F4C6A48B26D6779600DA7DA0 /* RegisterViewModel.swift in Sources */,
 				F4D7E47126C19DD7007AB772 /* NetworkManager.swift in Sources */,
 				F4D7E47026C19D76007AB772 /* CoinDataService.swift in Sources */,
 				F4D7E46F26C19C78007AB772 /* NetworkingManager.swift in Sources */,
+				F4C6A48A26D6744000DA7DA0 /* RegisterViewModelTests.swift in Sources */,
 				F4D7E46E26C19C54007AB772 /* CoinModel.swift in Sources */,
 				F44F34D926BED2B800FBA42A /* CoinDataServiceTests.swift in Sources */,
 				F4C85B6626B88810009C590A /* CoinModelTests.swift in Sources */,
