@@ -4,4 +4,4 @@ Służy do prezentacji informacji o kursach walut cyfrowych. Umożliwia dodanie 
 W ramach doskonalenia swoich umiejętności dodałem:
 - testy jednostkowe
 - testy UI
-- logowanie i rejestracja użytkownika za pomocą firebase auth
+- logowanie, rejestracja użytkownika oraz resetowanie hasła za pomocą firebase auth
