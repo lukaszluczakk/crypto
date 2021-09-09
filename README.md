@@ -1,4 +1,5 @@
-Aplikacja na podstawie kursu https://www.youtube.com/watch?v=TTYKL6CfbSs&list=PLwvDm4Vfkdphbc3bgy_LpLRQ9DDfFGcFu
+Aplikacja na podstawie kursu https://youtu.be/TTYKL6CfbSs.
+Służy do prezentacji informacji o kursach walut cyfrowych. Umożliwia dodanie wybranych walut do listy ulubionych, która przechowywana jest w core data.
 <br />
 W ramach doskonalenia swoich umiejętności dodałem:
 - testy jednostkowe
