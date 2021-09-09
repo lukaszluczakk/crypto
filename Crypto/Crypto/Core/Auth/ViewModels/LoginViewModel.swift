@@ -1,35 +1,37 @@
 //
-//  RegisterViewModel.swift
+//  LoginViewModel.swift
 //  Crypto
 //
-//  Created by Łukasz Łuczak on 20/08/2021.
+//  Created by Łukasz Łuczak on 09/09/2021.
 //
+
+import Foundation
 
 import Foundation
 import Combine
 
-enum RegistrationState {
+enum LoginState {
     case successful
     case failed(error: Error)
     case na
 }
 
-final class RegisterViewModel: ObservableObject {
+final class LoginViewModel: ObservableObject {
     private let authenticationService: AuthenticationServiceProtocol
     
     private var cancellable = Set<AnyCancellable>()
     
     var email: String = ""
     var password: String = ""
-    var state: RegistrationState = .na
+    var state: LoginState = .na
     
     init(authenticationService: AuthenticationServiceProtocol) {
         self.authenticationService = authenticationService
     }
     
-    func register() {
+    func login() {
         authenticationService
-            .register(email: email, password: password)
+            .login(email: email, password: password)
             .sink { [weak self] response in
                 switch response {
                 case .failure(let error):
@@ -39,6 +41,5 @@ final class RegisterViewModel: ObservableObject {
             } receiveValue: { [weak self] in
                 self?.state = .successful
             }.store(in: &cancellable)
-
     }
 }

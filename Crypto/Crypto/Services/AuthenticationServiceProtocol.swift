@@ -6,15 +6,9 @@
 //
 
 import Foundation
-
-typealias AuthenticationingServiceRegisterCompletion = (AuthenticationResult) -> Void
+import Combine
 
 protocol AuthenticationServiceProtocol {
-    var IsLogged: Published<Bool>.Publisher { get }
-    func register(email: String, password: String, completion: @escaping AuthenticationingServiceRegisterCompletion)
-}
-
-enum AuthenticationResult {
-    case successfully
-    case failed(errorMessage: String)
+    func login(email: String, password: String) -> AnyPublisher<Void, Error>
+    func register(email: String, password: String) -> AnyPublisher<Void, Error>
 }

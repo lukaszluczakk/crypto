@@ -19,7 +19,7 @@ import Firebase
 struct CryptoApp: App {
     
     //@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
+    @StateObject private var sessionService = FirebaseSessionService()
     @StateObject private var vm: HomeViewModel
     @State private var showLaunchView: Bool = true
     private let networkManager: NetworkingManager
@@ -38,8 +38,14 @@ struct CryptoApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                HomeView(networkManager: networkManager)
-                    .navigationBarHidden(true)
+                switch sessionService.state {
+                case .loggedIn:
+                    HomeView(networkManager: networkManager)
+                        .environmentObject(sessionService)
+                        .navigationBarHidden(true)
+                case .loggedOut:
+                    LoginView()
+                }
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .environmentObject(vm)

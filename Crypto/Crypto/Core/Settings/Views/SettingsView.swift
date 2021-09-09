@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SettingsView: View {
+    //TODO. Here should be not use conrecte implementation of SessionServiceProtocol.
+    @EnvironmentObject var sessionService: FirebaseSessionService
+    
     let defaultURL = URL(string: "https://www.gogole.com")!
     let youtubeURL = URL(string: "https://youtube.com/c/swiftfulthinking")!
     let coffeURL = URL(string: "https://buymeacoffe.com/nicksarno")!
@@ -29,6 +32,15 @@ struct SettingsView: View {
                                 .font(.callout)
                                 .bold()
                                 .foregroundColor(Color.theme.accent)
+                        }
+                    }
+                    Section(header: Text("User profile")) {
+                        VStack {
+                            Button(action: {
+                                sessionService.logout()
+                            }, label: {
+                                Text("Logout")
+                            })
                         }
                     }
                     .listRowBackground(Color.theme.background.opacity(0.5))

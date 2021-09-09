@@ -68,6 +68,9 @@
 		F4D7E46F26C19C78007AB772 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B7FF8D26C0188400AE8AFA /* NetworkingManager.swift */; };
 		F4D7E47026C19D76007AB772 /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4482AC126A8863500F96725 /* CoinDataService.swift */; };
 		F4D7E47126C19DD7007AB772 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438689F26AB5BE30072BA35 /* NetworkManager.swift */; };
+		F4E171D726EA71BC001C5F9F /* SessionUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171D626EA71BC001C5F9F /* SessionUserDetails.swift */; };
+		F4E171D926EA72B0001C5F9F /* FirebaseSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171D826EA72B0001C5F9F /* FirebaseSessionService.swift */; };
+		F4E171DB26EA7A84001C5F9F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171DA26EA7A84001C5F9F /* LoginViewModel.swift */; };
 		F4FD4C6526B591540012C9A7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD4C6426B591540012C9A7 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +157,9 @@
 		F4C85B5B26B887C3009C590A /* CryptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C85B5F26B887C3009C590A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4C85B6526B88810009C590A /* CoinModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModelTests.swift; sourceTree = "<group>"; };
+		F4E171D626EA71BC001C5F9F /* SessionUserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionUserDetails.swift; sourceTree = "<group>"; };
+		F4E171D826EA72B0001C5F9F /* FirebaseSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSessionService.swift; sourceTree = "<group>"; };
+		F4E171DA26EA7A84001C5F9F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F4FD4C6426B591540012C9A7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		FB650ADC660FC80FDD1AEEC9 /* Pods-CryptoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTests.release.xcconfig"; path = "Target Support Files/Pods-CryptoTests/Pods-CryptoTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD55EAD58C940BCB0CFE41F9 /* Pods_CryptoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +233,7 @@
 		F41B29AC26A47B4000D7FD7E /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				F4E171D426EA719E001C5F9F /* Session */,
 				F4FD4C6026B58F0D0012C9A7 /* Core */,
 				F438689E26AB5BA20072BA35 /* Utilities */,
 				F48DC88126A72A8400254A6D /* Models */,
@@ -321,6 +328,7 @@
 				F45196AB26B7224D00EF4E35 /* CoinDetailDataService.swift */,
 				F49C985926D009EA00143185 /* AuthenticationServiceProtocol.swift */,
 				F49C985B26D00C3B00143185 /* FirebaseAuthenticationService.swift */,
+				F4E171D826EA72B0001C5F9F /* FirebaseSessionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -422,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				F49C985526D0095E00143185 /* RegisterViewModel.swift */,
+				F4E171DA26EA7A84001C5F9F /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -434,6 +443,22 @@
 				F4C85B5F26B887C3009C590A /* Info.plist */,
 			);
 			path = CryptoTests;
+			sourceTree = "<group>";
+		};
+		F4E171D426EA719E001C5F9F /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				F4E171D526EA71A4001C5F9F /* Model */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		F4E171D526EA71A4001C5F9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4E171D626EA71BC001C5F9F /* SessionUserDetails.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F4FD4C6026B58F0D0012C9A7 /* Core */ = {
@@ -762,6 +787,8 @@
 				F403F61626AF1B4700E64D9F /* UIApplication.swift in Sources */,
 				F458683526A62672007060EA /* CircleButtonView.swift in Sources */,
 				F41B29BE26A47C3800D7FD7E /* Color.swift in Sources */,
+				F4E171DB26EA7A84001C5F9F /* LoginViewModel.swift in Sources */,
+				F4E171D726EA71BC001C5F9F /* SessionUserDetails.swift in Sources */,
 				F4FD4C6526B591540012C9A7 /* DetailView.swift in Sources */,
 				F45EC69326B5520300115F4D /* HapticManager.swift in Sources */,
 				F403F61426AF151200E64D9F /* SearchBarView.swift in Sources */,
@@ -784,6 +811,7 @@
 				F499A0AB26E6928E0027987A /* UserData.swift in Sources */,
 				F45196AA26B7221E00EF4E35 /* DetailViewModel.swift in Sources */,
 				F49C985826D0097700143185 /* LoginView.swift in Sources */,
+				F4E171D926EA72B0001C5F9F /* FirebaseSessionService.swift in Sources */,
 				F49C985A26D009EA00143185 /* AuthenticationServiceProtocol.swift in Sources */,
 				F45EC69126B49AA000115F4D /* PortfolioDataService.swift in Sources */,
 				F474279126BB318700D30B8B /* SettingsView.swift in Sources */,

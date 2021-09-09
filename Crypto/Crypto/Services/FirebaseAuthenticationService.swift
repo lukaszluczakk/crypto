@@ -6,39 +6,38 @@
 //
 
 import Foundation
+import Combine
 import FirebaseAuth
 
 final class FirebaseAuthenticationService: AuthenticationServiceProtocol {
-    private var authListener: AuthStateDidChangeListenerHandle?
-    
-    var IsLogged: Published<Bool>.Publisher { $IsLoggedInternal }
-    
-    @Published private(set) var IsLoggedInternal: Bool = false
-    
-    init() {
-        authListener = Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
-            if user != nil {
-                self?.IsLoggedInternal = true
-            } else {
-                self?.IsLoggedInternal = false
+    func login(email: String, password: String) -> AnyPublisher<Void, Error> {
+        Deferred {
+            Future { promise in
+                Auth.auth()
+                    .signIn(withEmail: email, password: password) { res, error in
+                        if let err = error {
+                            promise(.failure(err))
+                        } else {
+                            promise(.success(()))
+                        }
+                    }
             }
         }
+        .receive(on: RunLoop.main)
+        .eraseToAnyPublisher()
     }
     
-    deinit {
-        if let listener = authListener {
-            Auth.auth().removeStateDidChangeListener(listener)
-        }
-    }
-    
-    func register(email: String, password: String, completion: @escaping AuthenticationingServiceRegisterCompletion) {
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            guard authResult != nil, error == nil else {
-                completion(.failed(errorMessage: "Something goes wrong"))
-                return
+    func register(email: String, password: String) -> AnyPublisher<Void, Error> {
+        Deferred {
+            Future { promise in
+                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    if let err = error {
+                        promise(.failure(err))
+                    }
+                }
             }
-            
-            completion(.successfully)
         }
+        .receive(on: RunLoop.main)
+        .eraseToAnyPublisher()
     }
 }

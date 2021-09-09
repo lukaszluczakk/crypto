@@ -10,65 +10,70 @@ import SwiftUI
 struct LoginView: View {
     @State var showRegistration: Bool = false
     
-    @StateObject var vm: RegisterViewModel = RegisterViewModel(authenticationService: FirebaseAuthenticationService())
+    @StateObject var vm: LoginViewModel = LoginViewModel(authenticationService: FirebaseAuthenticationService())
     
     var body: some View {
-        ZStack {
-            Color.theme.background.ignoresSafeArea()
-            VStack {
-                Image("logo-transparent")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                VStack(spacing: 40) {
-                    HStack {
-                        TextField("E-mail", text: $vm.email)
-                    }
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.theme.background)
-                            .shadow(color: Color.theme.accent.opacity(0.15), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
-                    )
-                    HStack {
-                        TextField("Password", text: $vm.password)
-                    }
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.theme.background)
-                            .shadow(color: Color.theme.accent.opacity(0.15), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
-                    )
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+        NavigationView {
+            ZStack {
+                Color.theme.background.ignoresSafeArea()
+                VStack {
+                    Image("logo-transparent")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                    VStack(spacing: 40) {
                         HStack {
-                            Text("Login")
-                                .foregroundColor(Color.black)
+                            TextField("E-mail", text: $vm.email)
                         }
-                        .frame(width: 200)
                         .padding()
-                        .background(Color.white)
-                        .cornerRadius(25)
-                    })
-                    Button(action: {
-                        showRegistration.toggle()
-                    }, label: {
+                        .background(
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(Color.theme.background)
+                                .shadow(color: Color.theme.accent.opacity(0.15), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+                        )
                         HStack {
-                            Text("Register")
-                                .foregroundColor(Color.black)
+                            TextField("Password", text: $vm.password)
                         }
-                        .frame(width: 200)
                         .padding()
-                        .background(Color.white.opacity(0.7))
-                        .cornerRadius(25)
+                        .background(
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(Color.theme.background)
+                                .shadow(color: Color.theme.accent.opacity(0.15), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+                        )
+                        Button(action: {
+                            vm.login()
+                        }, label: {
+                            HStack {
+                                Text("Login")
+                                    .foregroundColor(Color.black)
+                            }
+                            .frame(width: 200)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(25)
+                        })
+                        Button(action: {
+                            showRegistration.toggle()
+                        }, label: {
+                            HStack {
+                                Text("Register")
+                                    .foregroundColor(Color.black)
+                            }
+                            .frame(width: 200)
+                            .padding()
+                            .background(Color.white.opacity(0.7))
+                            .cornerRadius(25)
+                        })
+                    }
+                    .sheet(isPresented: $showRegistration, content: {
+                        RegisterView()
                     })
+                    .font(.headline)
+                    .foregroundColor(Color.theme.accent)
+                    .padding()
                 }
-                .sheet(isPresented: $showRegistration, content: {
-                    RegisterView()
-                })
-                .font(.headline)
-                .foregroundColor(Color.theme.accent)
-                .padding()
             }
         }
+        .navigationTitle("Login")
     }
 }
 
