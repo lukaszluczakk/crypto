@@ -71,6 +71,8 @@
 		F4E171D726EA71BC001C5F9F /* SessionUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171D626EA71BC001C5F9F /* SessionUserDetails.swift */; };
 		F4E171D926EA72B0001C5F9F /* FirebaseSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171D826EA72B0001C5F9F /* FirebaseSessionService.swift */; };
 		F4E171DB26EA7A84001C5F9F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171DA26EA7A84001C5F9F /* LoginViewModel.swift */; };
+		F4E171DD26EA82E0001C5F9F /* ForgorPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171DC26EA82E0001C5F9F /* ForgorPasswordView.swift */; };
+		F4E171DF26EA8421001C5F9F /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171DE26EA8421001C5F9F /* ForgotPasswordViewModel.swift */; };
 		F4FD4C6526B591540012C9A7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD4C6426B591540012C9A7 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +162,8 @@
 		F4E171D626EA71BC001C5F9F /* SessionUserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionUserDetails.swift; sourceTree = "<group>"; };
 		F4E171D826EA72B0001C5F9F /* FirebaseSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSessionService.swift; sourceTree = "<group>"; };
 		F4E171DA26EA7A84001C5F9F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F4E171DC26EA82E0001C5F9F /* ForgorPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgorPasswordView.swift; sourceTree = "<group>"; };
+		F4E171DE26EA8421001C5F9F /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		F4FD4C6426B591540012C9A7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		FB650ADC660FC80FDD1AEEC9 /* Pods-CryptoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTests.release.xcconfig"; path = "Target Support Files/Pods-CryptoTests/Pods-CryptoTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD55EAD58C940BCB0CFE41F9 /* Pods_CryptoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -422,6 +426,7 @@
 			children = (
 				F49C985726D0097700143185 /* LoginView.swift */,
 				F44068D826E7F78700C28050 /* RegisterView.swift */,
+				F4E171DC26EA82E0001C5F9F /* ForgorPasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -431,6 +436,7 @@
 			children = (
 				F49C985526D0095E00143185 /* RegisterViewModel.swift */,
 				F4E171DA26EA7A84001C5F9F /* LoginViewModel.swift */,
+				F4E171DE26EA8421001C5F9F /* ForgotPasswordViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -773,6 +779,7 @@
 				F45196A826B71E2900EF4E35 /* CoinDetailModel.swift in Sources */,
 				F4C583BA26B9CC08000BFECA /* ChartView.swift in Sources */,
 				F4A6C2B126A75BDC00F7DE33 /* CoinRowView.swift in Sources */,
+				F4E171DF26EA8421001C5F9F /* ForgotPasswordViewModel.swift in Sources */,
 				F4A6C2B726A7666F00F7DE33 /* HomeViewModel.swift in Sources */,
 				F45EC68A26B34CC200115F4D /* XMarkButton.swift in Sources */,
 				F4C583BC26B9D24E000BFECA /* Date.swift in Sources */,
@@ -789,6 +796,7 @@
 				F41B29BE26A47C3800D7FD7E /* Color.swift in Sources */,
 				F4E171DB26EA7A84001C5F9F /* LoginViewModel.swift in Sources */,
 				F4E171D726EA71BC001C5F9F /* SessionUserDetails.swift in Sources */,
+				F4E171DD26EA82E0001C5F9F /* ForgorPasswordView.swift in Sources */,
 				F4FD4C6526B591540012C9A7 /* DetailView.swift in Sources */,
 				F45EC69326B5520300115F4D /* HapticManager.swift in Sources */,
 				F403F61426AF151200E64D9F /* SearchBarView.swift in Sources */,

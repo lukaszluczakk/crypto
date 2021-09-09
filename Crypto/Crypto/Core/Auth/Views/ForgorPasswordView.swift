@@ -1,14 +1,14 @@
 //
-//  RegisterView.swift
+//  ForgorPassword.swift
 //  Crypto
 //
-//  Created by Łukasz Łuczak on 07/09/2021.
+//  Created by Łukasz Łuczak on 09/09/2021.
 //
 
 import SwiftUI
 
-struct RegisterView: View {
-    @StateObject var vm: RegisterViewModel = RegisterViewModel(authenticationService: FirebaseAuthenticationService())
+struct ForgorPasswordView: View {
+    @StateObject var vm: ForgotPasswordViewModel = ForgotPasswordViewModel(authenticationService: FirebaseAuthenticationService())
     
     var body: some View {
         NavigationView {
@@ -28,21 +28,11 @@ struct RegisterView: View {
                                 .fill(Color.theme.background)
                                 .shadow(color: Color.theme.accent.opacity(0.15), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                         )
-                        HStack {
-                            TextField("Password", text: $vm.password)
-                        }
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 25)
-                                .fill(Color.theme.background)
-                                .shadow(color: Color.theme.accent.opacity(0.15), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
-                        )
-                        
                         Button(action: {
-                            vm.register()
+                            vm.forgotPassword()
                         }, label: {
                             HStack {
-                                Text("Register")
+                                Text("Send password reset")
                                     .foregroundColor(Color.black)
                             }
                             .frame(width: 200)
@@ -58,7 +48,7 @@ struct RegisterView: View {
                 }
             }
         }
-        .navigationTitle("Register")
+        .navigationTitle("Reset password")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 XMarkButton()
@@ -67,12 +57,11 @@ struct RegisterView: View {
     }
 }
 
-struct RegisterView_Previews: PreviewProvider {
+struct ForgorPasswordView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RegisterView()
+            ForgorPasswordView()
                 .preferredColorScheme(.dark)
         }
-        .navigationTitle("Register")
     }
 }

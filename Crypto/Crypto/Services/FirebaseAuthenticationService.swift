@@ -40,4 +40,20 @@ final class FirebaseAuthenticationService: AuthenticationServiceProtocol {
         .receive(on: RunLoop.main)
         .eraseToAnyPublisher()
     }
+    
+    func sendPasswordReset(email: String) -> AnyPublisher<Void, Error> {
+        Deferred {
+            Future { promise in
+                Auth.auth()
+                    .sendPasswordReset(withEmail: email, completion: { error in
+                        if let err = error {
+                            promise(.failure(err))
+                        } else {
+                            promise(.success(()))
+                        }
+                    })
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }

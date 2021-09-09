@@ -1,5 +1,5 @@
 //
-//  LoginViewModel.swift
+//  ForgotPasswordViewModel.swift
 //  Crypto
 //
 //  Created by Łukasz Łuczak on 09/09/2021.
@@ -8,36 +8,29 @@
 import Foundation
 import Combine
 
-enum LoginState {
-    case successful
-    case failed(error: Error)
-    case na
-}
-
-final class LoginViewModel: ObservableObject {
+final class ForgotPasswordViewModel: ObservableObject {
     private let authenticationService: AuthenticationServiceProtocol
     
     private var cancellable = Set<AnyCancellable>()
     
     var email: String = ""
-    var password: String = ""
-    var state: LoginState = .na
     
     init(authenticationService: AuthenticationServiceProtocol) {
         self.authenticationService = authenticationService
     }
     
-    func login() {
+    func forgotPassword() {
         authenticationService
-            .login(email: email, password: password)
-            .sink { [weak self] response in
+            .sendPasswordReset(email: email)
+            .sink { response in
                 switch response {
                 case .failure(let error):
-                    self?.state = .failed(error: error)
+                    print("Error while reseting password. \(error)")
                 default: break
                 }
-            } receiveValue: { [weak self] in
-                self?.state = .successful
+            } receiveValue: {
+                print("Sent password reset request")
             }.store(in: &cancellable)
     }
 }
+

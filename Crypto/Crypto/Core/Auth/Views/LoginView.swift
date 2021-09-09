@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @State var showRegistration: Bool = false
+    @State var showResetPasswordView: Bool = false
     
     @StateObject var vm: LoginViewModel = LoginViewModel(authenticationService: FirebaseAuthenticationService())
     
@@ -39,6 +40,14 @@ struct LoginView: View {
                                 .fill(Color.theme.background)
                                 .shadow(color: Color.theme.accent.opacity(0.15), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                         )
+                        HStack() {
+                            Spacer()
+                            Button(action: {
+                                showResetPasswordView.toggle()
+                            }, label: {
+                                Text("Forgot password?")
+                            })
+                        }
                         Button(action: {
                             vm.login()
                         }, label: {
@@ -69,6 +78,12 @@ struct LoginView: View {
                             RegisterView()
                         }
                     })
+                    .sheet(isPresented: $showResetPasswordView, content: {
+                        NavigationView {
+                            ForgorPasswordView()
+                        }
+                    })
+
                     .font(.headline)
                     .foregroundColor(Color.theme.accent)
                     .padding()

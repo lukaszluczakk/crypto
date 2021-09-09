@@ -11,4 +11,5 @@ import Combine
 protocol AuthenticationServiceProtocol {
     func login(email: String, password: String) -> AnyPublisher<Void, Error>
     func register(email: String, password: String) -> AnyPublisher<Void, Error>
+    func sendPasswordReset(email: String) -> AnyPublisher<Void, Error>
 }
