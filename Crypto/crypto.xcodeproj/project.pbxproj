@@ -75,6 +75,8 @@
 		F4E171DF26EA8421001C5F9F /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171DE26EA8421001C5F9F /* ForgotPasswordViewModel.swift */; };
 		F4E171E326EA89B4001C5F9F /* InputTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171E226EA89B4001C5F9F /* InputTextFieldView.swift */; };
 		F4E171E626EA8FFA001C5F9F /* PreviewLayoutComponentModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171E526EA8FFA001C5F9F /* PreviewLayoutComponentModifier.swift */; };
+		F4E171E826EA954C001C5F9F /* InputPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171E726EA954C001C5F9F /* InputPasswordView.swift */; };
+		F4E171EA26EA95FD001C5F9F /* PrimaryButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171E926EA95FD001C5F9F /* PrimaryButtonModifier.swift */; };
 		F4FD4C6526B591540012C9A7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD4C6426B591540012C9A7 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +170,8 @@
 		F4E171DE26EA8421001C5F9F /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		F4E171E226EA89B4001C5F9F /* InputTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFieldView.swift; sourceTree = "<group>"; };
 		F4E171E526EA8FFA001C5F9F /* PreviewLayoutComponentModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewLayoutComponentModifier.swift; sourceTree = "<group>"; };
+		F4E171E726EA954C001C5F9F /* InputPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordView.swift; sourceTree = "<group>"; };
+		F4E171E926EA95FD001C5F9F /* PrimaryButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonModifier.swift; sourceTree = "<group>"; };
 		F4FD4C6426B591540012C9A7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		FB650ADC660FC80FDD1AEEC9 /* Pods-CryptoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoTests.release.xcconfig"; path = "Target Support Files/Pods-CryptoTests/Pods-CryptoTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD55EAD58C940BCB0CFE41F9 /* Pods_CryptoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,6 +363,7 @@
 				F4892B0926B0956700432A5E /* StatisticView.swift */,
 				F45EC68926B34CC200115F4D /* XMarkButton.swift */,
 				F4E171E226EA89B4001C5F9F /* InputTextFieldView.swift */,
+				F4E171E726EA954C001C5F9F /* InputPasswordView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -476,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				F4E171E526EA8FFA001C5F9F /* PreviewLayoutComponentModifier.swift */,
+				F4E171E926EA95FD001C5F9F /* PrimaryButtonModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -807,6 +813,7 @@
 				F4E171E326EA89B4001C5F9F /* InputTextFieldView.swift in Sources */,
 				F41B29AE26A47B4000D7FD7E /* CryptoApp.swift in Sources */,
 				F403F61626AF1B4700E64D9F /* UIApplication.swift in Sources */,
+				F4E171E826EA954C001C5F9F /* InputPasswordView.swift in Sources */,
 				F458683526A62672007060EA /* CircleButtonView.swift in Sources */,
 				F41B29BE26A47C3800D7FD7E /* Color.swift in Sources */,
 				F4E171DB26EA7A84001C5F9F /* LoginViewModel.swift in Sources */,
@@ -816,6 +823,7 @@
 				F45EC69326B5520300115F4D /* HapticManager.swift in Sources */,
 				F403F61426AF151200E64D9F /* SearchBarView.swift in Sources */,
 				F4B7FF8E26C0188400AE8AFA /* NetworkingManager.swift in Sources */,
+				F4E171EA26EA95FD001C5F9F /* PrimaryButtonModifier.swift in Sources */,
 				F49B0DED26BC77210017841B /* LaunchView.swift in Sources */,
 				F43868A026AB5BE30072BA35 /* NetworkManager.swift in Sources */,
 				F45EC68C26B3502000115F4D /* CoinLogoView.swift in Sources */,

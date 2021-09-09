@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PreviewLayoutComponentModifier: ViewModifier {
-    
     let name: String
     
     func body(content: Content) -> some View {
