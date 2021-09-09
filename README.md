@@ -3,3 +3,4 @@ Aplikacja na podstawie kursu https://www.youtube.com/watch?v=TTYKL6CfbSs&list=PL
 W ramach doskonalenia swoich umiejętności dodałem:
 - testy jednostkowe
 - testy UI
+- logowanie i rejestracja użytkownika za pomocą firebase auth
