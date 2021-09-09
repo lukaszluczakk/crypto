@@ -59,6 +59,11 @@ struct RegisterView: View {
             }
         }
         .navigationTitle("Register")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                XMarkButton()
+            }
+        }
     }
 }
 

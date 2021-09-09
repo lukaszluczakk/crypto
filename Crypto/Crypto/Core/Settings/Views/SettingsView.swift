@@ -50,7 +50,7 @@ struct SettingsView: View {
             .listStyle(GroupedListStyle())
             .navigationTitle("Settings")
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     XMarkButton()
                 }
             }
