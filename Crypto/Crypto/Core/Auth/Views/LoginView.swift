@@ -65,7 +65,9 @@ struct LoginView: View {
                         })
                     }
                     .sheet(isPresented: $showRegistration, content: {
-                        RegisterView()
+                        NavigationView {
+                            RegisterView()
+                        }
                     })
                     .font(.headline)
                     .foregroundColor(Color.theme.accent)
@@ -79,7 +81,9 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
-            .preferredColorScheme(.dark)
+        NavigationView {
+            LoginView()
+                .preferredColorScheme(.dark)
+        }
     }
 }
