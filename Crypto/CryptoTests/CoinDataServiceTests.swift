@@ -10,17 +10,16 @@ import Combine
 @testable import Crypto
 
 class CoinDataServiceTests: XCTestCase {
-    func testAllCoinsPublishedProperty(){
+    func testAllCoinsShouldHandleDataFromNetwork(){
         let networkManagerMock = NetworkManagerMock()
         let coinDataService = CoinDataService(networkManager: networkManagerMock)
         var cancellable = Set<AnyCancellable>()
         let exp = expectation(description: "Wait for returns")
         coinDataService.$allCoins.sink { (returnedCoins) in
-            if (returnedCoins.count > 0) {
-                XCTAssertEqual(1, returnedCoins.count)
-                XCTAssertEqual("Bitcoin", returnedCoins[0].name)
-                exp.fulfill()
-            }
+            guard returnedCoins.count > 0 else { return }
+            XCTAssertEqual(1, returnedCoins.count)
+            XCTAssertEqual("Bitcoin", returnedCoins[0].name)
+            exp.fulfill()
         }.store(in: &cancellable)
         networkManagerMock.send(coins: [createCoinModel()])
         wait(for: [exp], timeout: 0.1)
