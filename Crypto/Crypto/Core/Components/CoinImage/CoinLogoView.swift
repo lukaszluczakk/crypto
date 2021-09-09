@@ -41,10 +41,10 @@ struct CoinLogoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CoinLogoView(coin: dev.coin, networkManager: dev.networkManager)
-                .previewLayout(.sizeThatFits)
+                .preview(with: "Coin logo")
             CoinLogoView(coin: dev.coin, networkManager: dev.networkManager)
-                .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)
+                .preview(with: "Dark coin logo")
         }
     }
 }

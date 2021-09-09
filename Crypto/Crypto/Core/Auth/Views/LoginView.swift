@@ -22,15 +22,7 @@ struct LoginView: View {
                         .resizable()
                         .frame(width: 100, height: 100)
                     VStack(spacing: 40) {
-                        HStack {
-                            TextField("E-mail", text: $vm.email)
-                        }
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 25)
-                                .fill(Color.theme.background)
-                                .shadow(color: Color.theme.accent.opacity(0.15), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
-                        )
+                        InputTextFieldView(text: $vm.email, placeholder: "E-mail", keyboardType: .emailAddress)
                         HStack {
                             TextField("Password", text: $vm.password)
                         }

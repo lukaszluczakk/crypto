@@ -43,7 +43,6 @@ struct StatisticView_Previews: PreviewProvider {
             StatisticView(stat: dev.stat2)
             StatisticView(stat: dev.stat3)
         }
-        .padding()
-        .previewLayout(.sizeThatFits)
+        .preview(with: "Statistic")
     }
 }

@@ -23,5 +23,6 @@ struct XMarkButton: View {
 struct XMarkButton_Previews: PreviewProvider {
     static var previews: some View {
         XMarkButton()
+            .preview(with: "X mark button")
     }
 }

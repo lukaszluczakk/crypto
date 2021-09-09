@@ -48,13 +48,11 @@ struct SearchBarView_Previews: PreviewProvider {
         Group {
             SearchBarView(searchText: .constant(""))
                 .preferredColorScheme(.dark)
-                .padding()
-                .previewLayout(.sizeThatFits)
+                .preview(with: "Dark search")
             
             SearchBarView(searchText: .constant(""))
                 .preferredColorScheme(.light)
-                .padding()
-                .previewLayout(.sizeThatFits)
+                .preview(with: "Light search")
         }
         
     }
