@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    //TODO. Here should be not use conrecte implementation of SessionServiceProtocol.
+    //TODO. Here should be not use concrete implementation of SessionServiceProtocol.
     @EnvironmentObject var sessionService: FirebaseSessionService
     
     let defaultURL = URL(string: "https://www.gogole.com")!
