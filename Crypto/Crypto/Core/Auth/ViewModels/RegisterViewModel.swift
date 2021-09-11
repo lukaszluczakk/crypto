@@ -19,12 +19,15 @@ final class RegisterViewModel: ObservableObject {
     
     private var cancellable = Set<AnyCancellable>()
     
+    @Published var state: LoginState = .na
+    @Published var hasError: Bool = false
+    
     var email: String = ""
     var password: String = ""
-    var state: RegistrationState = .na
     
     init(authenticationService: AuthenticationServiceProtocol) {
         self.authenticationService = authenticationService
+        setupErrorSubscriptions()
     }
     
     func register() {
@@ -40,5 +43,18 @@ final class RegisterViewModel: ObservableObject {
                 self?.state = .successful
             }.store(in: &cancellable)
 
+    }
+}
+
+extension RegisterViewModel {
+    func setupErrorSubscriptions() {
+        $state.map { state -> Bool in
+            switch state {
+            case .successful, .na:
+                return false
+            case .failed:
+                return true
+            }
+        }.assign(to: &$hasError)
     }
 }

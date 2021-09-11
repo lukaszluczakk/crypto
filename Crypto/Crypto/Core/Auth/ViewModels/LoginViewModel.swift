@@ -19,12 +19,14 @@ final class LoginViewModel: ObservableObject {
     
     private var cancellable = Set<AnyCancellable>()
     
+    @Published var state: LoginState = .na
+    @Published var hasError: Bool = false
     var email: String = ""
     var password: String = ""
-    var state: LoginState = .na
     
     init(authenticationService: AuthenticationServiceProtocol) {
         self.authenticationService = authenticationService
+        setupErrorSubscriptions()
     }
     
     func login() {
@@ -39,5 +41,18 @@ final class LoginViewModel: ObservableObject {
             } receiveValue: { [weak self] in
                 self?.state = .successful
             }.store(in: &cancellable)
+    }
+}
+
+extension LoginViewModel {
+    func setupErrorSubscriptions() {
+        $state.map { state -> Bool in
+            switch state {
+            case .successful, .na:
+                return false
+            case .failed:
+                return true
+            }
+        }.assign(to: &$hasError)
     }
 }
