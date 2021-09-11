@@ -42,7 +42,6 @@
 		F45F7A4F26EC9B740005E851 /* SecondaryButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A4E26EC9B740005E851 /* SecondaryButtonModifier.swift */; };
 		F45F7A5426ECC5E50005E851 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A5326ECC5E50005E851 /* CommandLine.swift */; };
 		F45F7A5526ECC6880005E851 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A5326ECC5E50005E851 /* CommandLine.swift */; };
-		F45F7A5726ECC71D0005E851 /* MockSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A5626ECC71D0005E851 /* MockSessionService.swift */; };
 		F474278D26BB2A5F00D30B8B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F474278C26BB2A5F00D30B8B /* String.swift */; };
 		F474279126BB318700D30B8B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F474279026BB318700D30B8B /* SettingsView.swift */; };
 		F4892B0826B093E600432A5E /* StatistictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4892B0726B093E600432A5E /* StatistictModel.swift */; };
@@ -145,7 +144,6 @@
 		F45F7A4C26EC98400005E851 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		F45F7A4E26EC9B740005E851 /* SecondaryButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonModifier.swift; sourceTree = "<group>"; };
 		F45F7A5326ECC5E50005E851 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
-		F45F7A5626ECC71D0005E851 /* MockSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSessionService.swift; sourceTree = "<group>"; };
 		F474278C26BB2A5F00D30B8B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F474279026BB318700D30B8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F4892B0726B093E600432A5E /* StatistictModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatistictModel.swift; sourceTree = "<group>"; };
@@ -352,7 +350,6 @@
 				F49C985926D009EA00143185 /* AuthenticationServiceProtocol.swift */,
 				F49C985B26D00C3B00143185 /* FirebaseAuthenticationService.swift */,
 				F4E171D826EA72B0001C5F9F /* FirebaseSessionService.swift */,
-				F45F7A5626ECC71D0005E851 /* MockSessionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -818,7 +815,6 @@
 				F49C985C26D00C3B00143185 /* FirebaseAuthenticationService.swift in Sources */,
 				F4482AC226A8863500F96725 /* CoinDataService.swift in Sources */,
 				F45196A826B71E2900EF4E35 /* CoinDetailModel.swift in Sources */,
-				F45F7A5726ECC71D0005E851 /* MockSessionService.swift in Sources */,
 				F4C583BA26B9CC08000BFECA /* ChartView.swift in Sources */,
 				F4A6C2B126A75BDC00F7DE33 /* CoinRowView.swift in Sources */,
 				F4E171DF26EA8421001C5F9F /* ForgotPasswordViewModel.swift in Sources */,

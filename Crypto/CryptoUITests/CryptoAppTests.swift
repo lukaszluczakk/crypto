@@ -31,20 +31,26 @@ class CryptoAppTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testLivePricesAsInitialText() throws {
-        let homeTitle = app.staticTexts["HomeTitle"]
-        XCTAssertEqual("Live prices", homeTitle.label)
+//    func testLivePricesAsInitialText() throws {
+//        let homeTitle = app.staticTexts["HomeTitle"]
+//        XCTAssertEqual("Live prices", homeTitle.label)
+//    }
+    
+    func testClickOnRegisterButtonShouldOpenSheet(){
+        app.buttons["Register"].tap()
+        let registerView = app.otherElements["RegisterView"]
+        XCTAssertTrue(registerView.exists)
     }
     
-    func testSearchHBTC() throws {
-        let hbtc = "HBTC"
-        let searchTextField = app.textFields["SearchTextField"]
-        searchTextField.tap()
-        searchTextField.typeText(hbtc)
-        sleep(1)
-        let coinSymbolTextsCount = app.staticTexts.matching(identifier: "CoinSymbolText").count
-        let coinSymbolTextLabel = app.staticTexts["CoinSymbolText"].label
-        XCTAssertEqual(1, coinSymbolTextsCount)
-        XCTAssertEqual(hbtc, coinSymbolTextLabel)
-    }
+//    func testSearchHBTC() throws {
+//        let hbtc = "HBTC"
+//        let searchTextField = app.textFields["SearchTextField"]
+//        searchTextField.tap()
+//        searchTextField.typeText(hbtc)
+//        sleep(1)
+//        let coinSymbolTextsCount = app.staticTexts.matching(identifier: "CoinSymbolText").count
+//        let coinSymbolTextLabel = app.staticTexts["CoinSymbolText"].label
+//        XCTAssertEqual(1, coinSymbolTextsCount)
+//        XCTAssertEqual(hbtc, coinSymbolTextLabel)
+//    }
 }

@@ -34,6 +34,7 @@ struct LoginView: View {
                     .sheet(isPresented: $showRegistration, content: {
                         NavigationView {
                             RegisterView()
+                                .accessibilityIdentifier("RegisterView")
                         }
                     })
                     .sheet(isPresented: $showResetPasswordView, content: {

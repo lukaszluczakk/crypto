@@ -24,7 +24,7 @@ struct ButtonView: View {
         }, label: {
             Text(label)
                 .frame(maxWidth: .infinity, maxHeight: 50)
-        })
+        }).accessibilityLabel(label)
     }
 }
 
