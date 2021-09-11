@@ -24,7 +24,7 @@
 		F444EE1726ACB6FE00F6ADA1 /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F444EE1626ACB6FE00F6ADA1 /* CoinImageViewModel.swift */; };
 		F4482AC226A8863500F96725 /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4482AC126A8863500F96725 /* CoinDataService.swift */; };
 		F44F34D926BED2B800FBA42A /* CoinDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44F34D826BED2B800FBA42A /* CoinDataServiceTests.swift */; };
-		F44F34E126BEDD4500FBA42A /* CryptoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44F34E026BEDD4500FBA42A /* CryptoUITests.swift */; };
+		F44F34E126BEDD4500FBA42A /* CryptoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44F34E026BEDD4500FBA42A /* CryptoAppTests.swift */; };
 		F45196A826B71E2900EF4E35 /* CoinDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45196A726B71E2900EF4E35 /* CoinDetailModel.swift */; };
 		F45196AA26B7221E00EF4E35 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45196A926B7221E00EF4E35 /* DetailViewModel.swift */; };
 		F45196AC26B7224D00EF4E35 /* CoinDetailDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45196AB26B7224D00EF4E35 /* CoinDetailDataService.swift */; };
@@ -40,6 +40,9 @@
 		F45EC69326B5520300115F4D /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45EC69226B5520300115F4D /* HapticManager.swift */; };
 		F45F7A4D26EC98400005E851 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A4C26EC98400005E851 /* ButtonView.swift */; };
 		F45F7A4F26EC9B740005E851 /* SecondaryButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A4E26EC9B740005E851 /* SecondaryButtonModifier.swift */; };
+		F45F7A5426ECC5E50005E851 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A5326ECC5E50005E851 /* CommandLine.swift */; };
+		F45F7A5526ECC6880005E851 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A5326ECC5E50005E851 /* CommandLine.swift */; };
+		F45F7A5726ECC71D0005E851 /* MockSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A5626ECC71D0005E851 /* MockSessionService.swift */; };
 		F474278D26BB2A5F00D30B8B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F474278C26BB2A5F00D30B8B /* String.swift */; };
 		F474279126BB318700D30B8B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F474279026BB318700D30B8B /* SettingsView.swift */; };
 		F4892B0826B093E600432A5E /* StatistictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4892B0726B093E600432A5E /* StatistictModel.swift */; };
@@ -124,7 +127,7 @@
 		F4482AC126A8863500F96725 /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
 		F44F34D826BED2B800FBA42A /* CoinDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataServiceTests.swift; sourceTree = "<group>"; };
 		F44F34DE26BEDD4400FBA42A /* CryptoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F44F34E026BEDD4500FBA42A /* CryptoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUITests.swift; sourceTree = "<group>"; };
+		F44F34E026BEDD4500FBA42A /* CryptoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAppTests.swift; sourceTree = "<group>"; };
 		F44F34E226BEDD4500FBA42A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45196A726B71E2900EF4E35 /* CoinDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailModel.swift; sourceTree = "<group>"; };
 		F45196A926B7221E00EF4E35 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 		F45EC69226B5520300115F4D /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		F45F7A4C26EC98400005E851 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		F45F7A4E26EC9B740005E851 /* SecondaryButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonModifier.swift; sourceTree = "<group>"; };
+		F45F7A5326ECC5E50005E851 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
+		F45F7A5626ECC71D0005E851 /* MockSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSessionService.swift; sourceTree = "<group>"; };
 		F474278C26BB2A5F00D30B8B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F474279026BB318700D30B8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F4892B0726B093E600432A5E /* StatistictModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatistictModel.swift; sourceTree = "<group>"; };
@@ -249,6 +254,7 @@
 		F41B29AC26A47B4000D7FD7E /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				F45F7A5026ECC5850005E851 /* Helpers */,
 				F4E171D426EA719E001C5F9F /* Session */,
 				F4FD4C6026B58F0D0012C9A7 /* Core */,
 				F438689E26AB5BA20072BA35 /* Utilities */,
@@ -281,6 +287,7 @@
 				F403F61526AF1B4700E64D9F /* UIApplication.swift */,
 				F4C583BB26B9D24E000BFECA /* Date.swift */,
 				F474278C26BB2A5F00D30B8B /* String.swift */,
+				F45F7A5326ECC5E50005E851 /* CommandLine.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +352,7 @@
 				F49C985926D009EA00143185 /* AuthenticationServiceProtocol.swift */,
 				F49C985B26D00C3B00143185 /* FirebaseAuthenticationService.swift */,
 				F4E171D826EA72B0001C5F9F /* FirebaseSessionService.swift */,
+				F45F7A5626ECC71D0005E851 /* MockSessionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -352,7 +360,7 @@
 		F44F34DF26BEDD4400FBA42A /* CryptoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F44F34E026BEDD4500FBA42A /* CryptoUITests.swift */,
+				F44F34E026BEDD4500FBA42A /* CryptoAppTests.swift */,
 				F44F34E226BEDD4500FBA42A /* Info.plist */,
 			);
 			path = CryptoUITests;
@@ -380,6 +388,13 @@
 				F458683626A62B3B007060EA /* CIrcleButtonAnimationView.swift */,
 			);
 			path = CircleButton;
+			sourceTree = "<group>";
+		};
+		F45F7A5026ECC5850005E851 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F474278E26BB317200D30B8B /* Settings */ = {
@@ -803,6 +818,7 @@
 				F49C985C26D00C3B00143185 /* FirebaseAuthenticationService.swift in Sources */,
 				F4482AC226A8863500F96725 /* CoinDataService.swift in Sources */,
 				F45196A826B71E2900EF4E35 /* CoinDetailModel.swift in Sources */,
+				F45F7A5726ECC71D0005E851 /* MockSessionService.swift in Sources */,
 				F4C583BA26B9CC08000BFECA /* ChartView.swift in Sources */,
 				F4A6C2B126A75BDC00F7DE33 /* CoinRowView.swift in Sources */,
 				F4E171DF26EA8421001C5F9F /* ForgotPasswordViewModel.swift in Sources */,
@@ -824,6 +840,7 @@
 				F458683526A62672007060EA /* CircleButtonView.swift in Sources */,
 				F41B29BE26A47C3800D7FD7E /* Color.swift in Sources */,
 				F4E171DB26EA7A84001C5F9F /* LoginViewModel.swift in Sources */,
+				F45F7A5426ECC5E50005E851 /* CommandLine.swift in Sources */,
 				F4E171D726EA71BC001C5F9F /* SessionUserDetails.swift in Sources */,
 				F4E171DD26EA82E0001C5F9F /* ForgorPasswordView.swift in Sources */,
 				F4FD4C6526B591540012C9A7 /* DetailView.swift in Sources */,
@@ -862,7 +879,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F44F34E126BEDD4500FBA42A /* CryptoUITests.swift in Sources */,
+				F45F7A5526ECC6880005E851 /* CommandLine.swift in Sources */,
+				F44F34E126BEDD4500FBA42A /* CryptoAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,13 +6,15 @@
 //
 
 import XCTest
+@testable import Crypto
 
-class CryptoUITests: XCTestCase {
+class CryptoAppTests: XCTestCase {
     var app: XCUIApplication!
     
     override func setUp() {
         continueAfterFailure = false
         app = XCUIApplication()
+        app.launchArguments.append(CommandLineArgument.uiTest.rawValue)
         app.launch()
     }
     

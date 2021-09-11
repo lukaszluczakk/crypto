@@ -19,7 +19,7 @@ final class RegisterViewModel: ObservableObject {
     
     private var cancellable = Set<AnyCancellable>()
     
-    @Published var state: LoginState = .na
+    @Published var state: RegistrationState = .na
     @Published var hasError: Bool = false
     
     var email: String = ""
