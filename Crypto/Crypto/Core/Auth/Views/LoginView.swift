@@ -26,8 +26,10 @@ struct LoginView: View {
                             Spacer()
                             forgotPasswordButton
                         }
-                        loginButton
-                        registerButton
+                        VStack(spacing: 20) {
+                            loginButton
+                            registerButton
+                        }.padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
                     }
                     .sheet(isPresented: $showRegistration, content: {
                         NavigationView {
@@ -55,7 +57,7 @@ struct LoginView_Previews: PreviewProvider {
             LoginView()
                 .preferredColorScheme(.dark)
         }
-        .preferredColorScheme(.light)
+        .preferredColorScheme(.dark)
     }
 }
 

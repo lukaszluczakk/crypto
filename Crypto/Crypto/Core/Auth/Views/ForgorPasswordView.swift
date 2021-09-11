@@ -15,26 +15,12 @@ struct ForgorPasswordView: View {
             ZStack {
                 Color.theme.background.ignoresSafeArea()
                 VStack {
-                    Image("logo-transparent")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                    VStack(spacing: 40) {
-                        HStack {
-                            TextField("E-mail", text: $vm.email)
-                        }
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 25)
-                                .fill(Color.theme.background)
-                                .shadow(color: Color.theme.accent.opacity(0.15), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
-                        )
-                        
-                        ButtonView(label: "Send password reset") {
-                            vm.forgotPassword()
-                        }
-                        .primaryButton()
+                    logo
+                    VStack() {
+                        InputTextFieldView(text: $vm.email, placeholder: "E-mail", keyboardType: .emailAddress)
+                        sendPasswordResetButton
+                            .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
                     }
-                 
                     .font(.headline)
                     .foregroundColor(Color.theme.accent)
                     .padding()
@@ -57,5 +43,20 @@ struct ForgorPasswordView_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
         }
         .preferredColorScheme(.light)
+    }
+}
+
+extension ForgorPasswordView {
+    private var logo: some View {
+        Image("logo-transparent")
+            .resizable()
+            .frame(width: 100, height: 100)
+    }
+    
+    private var sendPasswordResetButton: some View {
+        ButtonView(label: "Send password reset") {
+            vm.forgotPassword()
+        }
+        .primaryButton()
     }
 }

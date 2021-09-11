@@ -15,34 +15,13 @@ struct RegisterView: View {
             ZStack {
                 Color.theme.background.ignoresSafeArea()
                 VStack {
-                    Image("logo-transparent")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                    VStack(spacing: 40) {
-                        HStack {
-                            TextField("E-mail", text: $vm.email)
-                        }
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 25)
-                                .fill(Color.theme.background)
-                                .shadow(color: Color.theme.accent.opacity(0.15), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
-                        )
-                        HStack {
-                            TextField("Password", text: $vm.password)
-                        }
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 25)
-                                .fill(Color.theme.background)
-                                .shadow(color: Color.theme.accent.opacity(0.15), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
-                        )
-                        
-                        ButtonView(label: "Register") {
-                            vm.register()
-                        }.primaryButton()
+                    logo
+                    VStack(spacing: 20) {
+                        InputTextFieldView(text: $vm.email, placeholder: "E-mail", keyboardType: .emailAddress)
+                        InputPasswordView(text: $vm.password, placeholder: "Password")
+                        registerButton
+                            .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
                     }
-                 
                     .font(.headline)
                     .foregroundColor(Color.theme.accent)
                     .padding()
@@ -64,6 +43,21 @@ struct RegisterView_Previews: PreviewProvider {
             RegisterView()
                 .preferredColorScheme(.dark)
         }
+        .preferredColorScheme(.light)
         .navigationTitle("Register")
+    }
+}
+
+extension RegisterView {
+    private var logo: some View {
+        Image("logo-transparent")
+            .resizable()
+            .frame(width: 100, height: 100)
+    }
+    
+    private var registerButton: some View {
+        ButtonView(label: "Register") {
+            vm.register()
+        }.primaryButton()
     }
 }
