@@ -5,3 +5,5 @@ W ramach doskonalenia swoich umiejętności dodałem:
 - testy jednostkowe
 - testy UI
 - logowanie, rejestracja użytkownika oraz resetowanie hasła za pomocą firebase auth
+
+Szczegółowe informacje na temat dalszego rozwoju aplikacji można znaleźć w zakładce Projects.
