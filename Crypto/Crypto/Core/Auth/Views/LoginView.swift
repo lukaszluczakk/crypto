@@ -55,6 +55,7 @@ struct LoginView_Previews: PreviewProvider {
             LoginView()
                 .preferredColorScheme(.dark)
         }
+        .preferredColorScheme(.light)
     }
 }
 
@@ -66,33 +67,17 @@ extension LoginView {
     }
     
     private var loginButton: some View {
-        Button(action: {
+        ButtonView(label: "Login") {
             vm.login()
-        }, label: {
-            HStack {
-                Text("Login")
-                    .foregroundColor(Color.black)
-            }
-            .frame(width: 200)
-            .padding()
-            .background(Color.white.opacity(0.7))
-            .cornerRadius(25)
-        })
+        }
+        .primaryButton()
     }
     
     private var registerButton: some View {
-        Button(action: {
+        ButtonView(label: "Register") {
             showRegistration.toggle()
-        }, label: {
-            HStack {
-                Text("Register")
-                    .foregroundColor(Color.black)
-            }
-            .frame(width: 200)
-            .padding()
-            .background(Color.white.opacity(0.7))
-            .cornerRadius(25)
-        })
+        }
+        .secondaryButton()
     }
     
     private var forgotPasswordButton: some View {

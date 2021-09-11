@@ -38,6 +38,8 @@
 		F45EC68F26B49A0500115F4D /* PortfolioContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F45EC68D26B49A0500115F4D /* PortfolioContainer.xcdatamodeld */; };
 		F45EC69126B49AA000115F4D /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45EC69026B49AA000115F4D /* PortfolioDataService.swift */; };
 		F45EC69326B5520300115F4D /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45EC69226B5520300115F4D /* HapticManager.swift */; };
+		F45F7A4D26EC98400005E851 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A4C26EC98400005E851 /* ButtonView.swift */; };
+		F45F7A4F26EC9B740005E851 /* SecondaryButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A4E26EC9B740005E851 /* SecondaryButtonModifier.swift */; };
 		F474278D26BB2A5F00D30B8B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F474278C26BB2A5F00D30B8B /* String.swift */; };
 		F474279126BB318700D30B8B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F474279026BB318700D30B8B /* SettingsView.swift */; };
 		F4892B0826B093E600432A5E /* StatistictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4892B0726B093E600432A5E /* StatistictModel.swift */; };
@@ -137,6 +139,8 @@
 		F45EC68E26B49A0500115F4D /* PortfolioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioContainer.xcdatamodel; sourceTree = "<group>"; };
 		F45EC69026B49AA000115F4D /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
 		F45EC69226B5520300115F4D /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		F45F7A4C26EC98400005E851 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		F45F7A4E26EC9B740005E851 /* SecondaryButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonModifier.swift; sourceTree = "<group>"; };
 		F474278C26BB2A5F00D30B8B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F474279026BB318700D30B8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F4892B0726B093E600432A5E /* StatistictModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatistictModel.swift; sourceTree = "<group>"; };
@@ -364,6 +368,7 @@
 				F45EC68926B34CC200115F4D /* XMarkButton.swift */,
 				F4E171E226EA89B4001C5F9F /* InputTextFieldView.swift */,
 				F4E171E726EA954C001C5F9F /* InputPasswordView.swift */,
+				F45F7A4C26EC98400005E851 /* ButtonView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 			children = (
 				F4E171E526EA8FFA001C5F9F /* PreviewLayoutComponentModifier.swift */,
 				F4E171E926EA95FD001C5F9F /* PrimaryButtonModifier.swift */,
+				F45F7A4E26EC9B740005E851 /* SecondaryButtonModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -805,6 +811,7 @@
 				F4C583BC26B9D24E000BFECA /* Date.swift in Sources */,
 				F45AF88726AEDE9E00DF7D1E /* LocalFileManager.swift in Sources */,
 				F4892B0826B093E600432A5E /* StatistictModel.swift in Sources */,
+				F45F7A4D26EC98400005E851 /* ButtonView.swift in Sources */,
 				F4892B0E26B0A26F00432A5E /* MarketDataModel.swift in Sources */,
 				F49C985626D0095E00143185 /* RegisterViewModel.swift in Sources */,
 				F41B29C326A47C6500D7FD7E /* HomeView.swift in Sources */,
@@ -827,6 +834,7 @@
 				F49B0DED26BC77210017841B /* LaunchView.swift in Sources */,
 				F43868A026AB5BE30072BA35 /* NetworkManager.swift in Sources */,
 				F45EC68C26B3502000115F4D /* CoinLogoView.swift in Sources */,
+				F45F7A4F26EC9B740005E851 /* SecondaryButtonModifier.swift in Sources */,
 				F4892B0C26B0990B00432A5E /* HomeStatsView.swift in Sources */,
 				F45EC68626B340F700115F4D /* MarketDataService.swift in Sources */,
 				F458683726A62B3B007060EA /* CIrcleButtonAnimationView.swift in Sources */,

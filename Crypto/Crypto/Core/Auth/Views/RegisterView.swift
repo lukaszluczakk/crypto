@@ -38,18 +38,9 @@ struct RegisterView: View {
                                 .shadow(color: Color.theme.accent.opacity(0.15), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                         )
                         
-                        Button(action: {
+                        ButtonView(label: "Register") {
                             vm.register()
-                        }, label: {
-                            HStack {
-                                Text("Register")
-                                    .foregroundColor(Color.black)
-                            }
-                            .frame(width: 200)
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(25)
-                        })
+                        }.primaryButton()
                     }
                  
                     .font(.headline)
