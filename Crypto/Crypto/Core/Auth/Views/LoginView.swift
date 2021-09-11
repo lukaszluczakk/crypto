@@ -40,6 +40,7 @@ struct LoginView: View {
                     .sheet(isPresented: $showResetPasswordView, content: {
                         NavigationView {
                             ForgotPasswordView()
+                                .accessibilityIdentifier("ForgotPasswordView")
                         }
                     })
                     .font(.headline)
