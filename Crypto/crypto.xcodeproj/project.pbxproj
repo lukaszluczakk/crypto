@@ -75,7 +75,7 @@
 		F4E171D726EA71BC001C5F9F /* SessionUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171D626EA71BC001C5F9F /* SessionUserDetails.swift */; };
 		F4E171D926EA72B0001C5F9F /* FirebaseSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171D826EA72B0001C5F9F /* FirebaseSessionService.swift */; };
 		F4E171DB26EA7A84001C5F9F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171DA26EA7A84001C5F9F /* LoginViewModel.swift */; };
-		F4E171DD26EA82E0001C5F9F /* ForgorPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171DC26EA82E0001C5F9F /* ForgorPasswordView.swift */; };
+		F4E171DD26EA82E0001C5F9F /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171DC26EA82E0001C5F9F /* ForgotPasswordView.swift */; };
 		F4E171DF26EA8421001C5F9F /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171DE26EA8421001C5F9F /* ForgotPasswordViewModel.swift */; };
 		F4E171E326EA89B4001C5F9F /* InputTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171E226EA89B4001C5F9F /* InputTextFieldView.swift */; };
 		F4E171E626EA8FFA001C5F9F /* PreviewLayoutComponentModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E171E526EA8FFA001C5F9F /* PreviewLayoutComponentModifier.swift */; };
@@ -173,7 +173,7 @@
 		F4E171D626EA71BC001C5F9F /* SessionUserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionUserDetails.swift; sourceTree = "<group>"; };
 		F4E171D826EA72B0001C5F9F /* FirebaseSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSessionService.swift; sourceTree = "<group>"; };
 		F4E171DA26EA7A84001C5F9F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		F4E171DC26EA82E0001C5F9F /* ForgorPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgorPasswordView.swift; sourceTree = "<group>"; };
+		F4E171DC26EA82E0001C5F9F /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		F4E171DE26EA8421001C5F9F /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		F4E171E226EA89B4001C5F9F /* InputTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFieldView.swift; sourceTree = "<group>"; };
 		F4E171E526EA8FFA001C5F9F /* PreviewLayoutComponentModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewLayoutComponentModifier.swift; sourceTree = "<group>"; };
@@ -453,7 +453,7 @@
 			children = (
 				F49C985726D0097700143185 /* LoginView.swift */,
 				F44068D826E7F78700C28050 /* RegisterView.swift */,
-				F4E171DC26EA82E0001C5F9F /* ForgorPasswordView.swift */,
+				F4E171DC26EA82E0001C5F9F /* ForgotPasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -838,7 +838,7 @@
 				F4E171DB26EA7A84001C5F9F /* LoginViewModel.swift in Sources */,
 				F45F7A5426ECC5E50005E851 /* CommandLine.swift in Sources */,
 				F4E171D726EA71BC001C5F9F /* SessionUserDetails.swift in Sources */,
-				F4E171DD26EA82E0001C5F9F /* ForgorPasswordView.swift in Sources */,
+				F4E171DD26EA82E0001C5F9F /* ForgotPasswordView.swift in Sources */,
 				F4FD4C6526B591540012C9A7 /* DetailView.swift in Sources */,
 				F45EC69326B5520300115F4D /* HapticManager.swift in Sources */,
 				F403F61426AF151200E64D9F /* SearchBarView.swift in Sources */,

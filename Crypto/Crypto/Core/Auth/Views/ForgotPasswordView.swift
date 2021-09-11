@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ForgorPasswordView: View {
+struct ForgotPasswordView: View {
     @StateObject var vm: ForgotPasswordViewModel = ForgotPasswordViewModel(authenticationService: FirebaseAuthenticationService())
     
     var body: some View {
@@ -39,14 +39,14 @@ struct ForgorPasswordView: View {
 struct ForgorPasswordView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ForgorPasswordView()
+            ForgotPasswordView()
                 .preferredColorScheme(.dark)
         }
         .preferredColorScheme(.light)
     }
 }
 
-extension ForgorPasswordView {
+extension ForgotPasswordView {
     private var logo: some View {
         Image("logo-transparent")
             .resizable()
