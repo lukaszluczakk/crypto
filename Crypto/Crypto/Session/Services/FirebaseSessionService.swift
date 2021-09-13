@@ -7,29 +7,32 @@
 
 import Foundation
 import FirebaseAuth
+import Combine
 
 enum SessionState {
     case loggedIn
     case loggedOut
 }
 
-protocol SessionServiceProtocol: ObservableObject {
-    var state: SessionState { get }
-    var userDetails: SessionUserDetails? { get }
-    func logout()
-}
-
-class FirebaseSessionService: SessionServiceProtocol {
+class SessionService: ObservableObject {
     @Published var state: SessionState = .loggedOut
     @Published var userDetails: SessionUserDetails?
     
+    func logout() {
+        fatalError("This method must be overridden")
+    }
+}
+
+class FirebaseSessionService: SessionService {
+
     private var handler: AuthStateDidChangeListenerHandle?
     
-    init() {
-        setupFirebaseAuthHandler()
+    override init() {
+        super.init()
+        self.setupFirebaseAuthHandler()
     }
     
-    func logout() {
+    override func logout() {
         try? Auth.auth().signOut()
     }
 }

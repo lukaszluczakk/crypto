@@ -11,7 +11,7 @@ struct LoginView: View {
     @State var showRegistration: Bool = false
     @State var showResetPasswordView: Bool = false
     
-    @StateObject var vm: LoginViewModel = LoginViewModel(authenticationService: FirebaseAuthenticationService())
+    @StateObject var vm: LoginViewModel = LoginViewModel(authenticationService: AuthenticationServiceFactory.getService())
     
     var body: some View {
         NavigationView {

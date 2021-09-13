@@ -8,22 +8,12 @@
 import SwiftUI
 import Firebase
 
-//final class AppDelegate: NSObject, UIApplicationDelegate {
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-//        FirebaseApp.configure()
-//        return true
-//    }
-//}
-
 @main
 struct CryptoApp: App {
-    
-    //@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject private var sessionService = FirebaseSessionService()
+    @StateObject private var sessionService: SessionService = SessionServiceFactory.getService()
     @StateObject private var vm: HomeViewModel
     @State private var showLaunchView: Bool = true
     private let networkManager: NetworkingManager
-    //private let authenticationService: AuthenticationServiceProtocol = FirebaseAuthenticationService()
     
     init() {
         FirebaseApp.configure()

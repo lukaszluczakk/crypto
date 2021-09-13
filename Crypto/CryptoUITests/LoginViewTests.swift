@@ -14,7 +14,6 @@ class LoginViewTests: XCTestCase {
     override func setUp() {
         continueAfterFailure = false
         app = XCUIApplication()
-        app.launchArguments.append(CommandLineArgument.uiTest.rawValue)
         app.launch()
     }
     
@@ -31,7 +30,7 @@ class LoginViewTests: XCTestCase {
     }
     
     func testAlertShouldBeVisibleIfLoginAndPasswordAreEmpty() {
-        app.buttons["Login"].tap()
+        app.logIn()
         let alert = app.alerts["Error"]
         XCTAssertTrue(alert.exists)
     }

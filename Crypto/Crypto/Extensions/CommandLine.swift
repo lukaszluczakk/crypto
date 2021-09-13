@@ -8,11 +8,11 @@
 import Foundation
 
 enum CommandLineArgument: String {
-    case uiTest = "ui-test"
+    case uiTestMockAuthentication = "Use mocked authentication service to log into app"
 }
 
 extension CommandLine {
-    static func isTesting() -> Bool {
-        self.arguments.contains(CommandLineArgument.uiTest.rawValue)
+    static func hasUITestMockAuthenticationArgument() -> Bool {
+        self.arguments.contains(CommandLineArgument.uiTestMockAuthentication.rawValue)
     }
 }
