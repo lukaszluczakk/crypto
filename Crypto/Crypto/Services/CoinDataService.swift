@@ -8,15 +8,21 @@
 import Foundation
 import Combine
 
-class CoinDataService {
-    private var networkManager: NetworkingManager
-    
+class CoinDataServiceBase {
     @Published var allCoins: [CoinModel] = []
-    
+}
+
+protocol CoinDataServiceProtocol: CoinDataServiceBase {
+    func getCoins()
+}
+
+class CoinDataService: CoinDataServiceBase, CoinDataServiceProtocol {
+    private var networkManager: NetworkingManager
     var subscription: AnyCancellable?
     
     init(networkManager: NetworkingManager) {
         self.networkManager = networkManager
+        super.init()
         getCoins()
     }
     

@@ -74,6 +74,8 @@
 		F4C6A48C26D6779D00DA7DA0 /* AuthenticationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C985926D009EA00143185 /* AuthenticationServiceProtocol.swift */; };
 		F4C6A48E26D6780000DA7DA0 /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C6A48D26D6780000DA7DA0 /* FBLPromises.framework */; };
 		F4C85B6626B88810009C590A /* CoinModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C85B6526B88810009C590A /* CoinModelTests.swift */; };
+		F4D5F9CF26F28E3200045DE1 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F9CE26F28E3200045DE1 /* HomeViewModelTests.swift */; };
+		F4D5F9D226F2918F00045DE1 /* CoinModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5F9D126F2918F00045DE1 /* CoinModelHelper.swift */; };
 		F4D7E46E26C19C54007AB772 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48DC88226A72A9D00254A6D /* CoinModel.swift */; };
 		F4D7E46F26C19C78007AB772 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B7FF8D26C0188400AE8AFA /* NetworkingManager.swift */; };
 		F4D7E47026C19D76007AB772 /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4482AC126A8863500F96725 /* CoinDataService.swift */; };
@@ -182,6 +184,8 @@
 		F4C85B5B26B887C3009C590A /* CryptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C85B5F26B887C3009C590A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4C85B6526B88810009C590A /* CoinModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModelTests.swift; sourceTree = "<group>"; };
+		F4D5F9CE26F28E3200045DE1 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		F4D5F9D126F2918F00045DE1 /* CoinModelHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModelHelper.swift; sourceTree = "<group>"; };
 		F4E171D626EA71BC001C5F9F /* SessionUserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionUserDetails.swift; sourceTree = "<group>"; };
 		F4E171D826EA72B0001C5F9F /* FirebaseSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSessionService.swift; sourceTree = "<group>"; };
 		F4E171DA26EA7A84001C5F9F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -512,11 +516,21 @@
 		F4C85B5C26B887C3009C590A /* CryptoTests */ = {
 			isa = PBXGroup;
 			children = (
+				F4D5F9D026F2917B00045DE1 /* Helpers */,
 				F44F34D826BED2B800FBA42A /* CoinDataServiceTests.swift */,
 				F4C85B6526B88810009C590A /* CoinModelTests.swift */,
 				F4C85B5F26B887C3009C590A /* Info.plist */,
+				F4D5F9CE26F28E3200045DE1 /* HomeViewModelTests.swift */,
 			);
 			path = CryptoTests;
+			sourceTree = "<group>";
+		};
+		F4D5F9D026F2917B00045DE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F4D5F9D126F2918F00045DE1 /* CoinModelHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F4E171D426EA719E001C5F9F /* Session */ = {
@@ -937,8 +951,10 @@
 				F4D7E47126C19DD7007AB772 /* NetworkManager.swift in Sources */,
 				F4D7E47026C19D76007AB772 /* CoinDataService.swift in Sources */,
 				F4D7E46F26C19C78007AB772 /* NetworkingManager.swift in Sources */,
+				F4D5F9CF26F28E3200045DE1 /* HomeViewModelTests.swift in Sources */,
 				F4D7E46E26C19C54007AB772 /* CoinModel.swift in Sources */,
 				F44F34D926BED2B800FBA42A /* CoinDataServiceTests.swift in Sources */,
+				F4D5F9D226F2918F00045DE1 /* CoinModelHelper.swift in Sources */,
 				F4C85B6626B88810009C590A /* CoinModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

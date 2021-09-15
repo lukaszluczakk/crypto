@@ -18,7 +18,9 @@ struct CryptoApp: App {
     init() {
         FirebaseApp.configure()
         self.networkManager = NetworkManager()
-        let homeViewModel = HomeViewModel(networkManager:  self.networkManager)
+        let coinDataService = CoinDataService(networkManager: networkManager)
+        let marketDataService = MarketDataService(networkManager: networkManager)
+        let homeViewModel = HomeViewModel(coinDataService: coinDataService, marketDataService: marketDataService)
         self._vm = StateObject(wrappedValue: homeViewModel)
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.accent)]
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.theme.accent)]

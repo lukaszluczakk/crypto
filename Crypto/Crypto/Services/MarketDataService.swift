@@ -8,14 +8,21 @@
 import Foundation
 import Combine
 
-class MarketDataService {
+class MarketDataServiceBase {
     @Published var marketData: MarketDataModel? = nil
-    
+}
+
+protocol MarketDataServiceProtocol: MarketDataServiceBase {
+    func getData()
+}
+
+class MarketDataService: MarketDataServiceBase, MarketDataServiceProtocol {
     private let networkManager: NetworkingManager
     var marketDatasubscription: AnyCancellable?
     
     init(networkManager: NetworkingManager) {
         self.networkManager = networkManager
+        super.init()
         getData()
     }
 

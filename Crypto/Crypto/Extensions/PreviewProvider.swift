@@ -21,8 +21,10 @@ class DeveloperPreview {
     let homeVM: HomeViewModel
     
     private init() {
-        self.networkManager = NetworkManager()
-        self.homeVM = HomeViewModel(networkManager: self.networkManager)
+        networkManager = NetworkManager()
+        let coinDataService = CoinDataService(networkManager: networkManager)
+        let marketDataService = MarketDataService(networkManager: networkManager)
+        homeVM = HomeViewModel(coinDataService: coinDataService, marketDataService: marketDataService)
     }
     
     let stat1 = StatistictModel(title: "Market cup", value: "$12.5Bn", percentageChange: 25.34)

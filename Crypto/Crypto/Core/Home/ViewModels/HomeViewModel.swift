@@ -16,8 +16,8 @@ class HomeViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var sortOption: SortOption = .holdings
     
-    private let coinDataService: CoinDataService
-    private let marketDataService: MarketDataService
+    private let coinDataService: CoinDataServiceProtocol
+    private let marketDataService: MarketDataServiceProtocol
     private let portfolioDataService = PortfolioDataService()
     private var cancellable = Set<AnyCancellable>()
     
@@ -25,9 +25,9 @@ class HomeViewModel: ObservableObject {
         case  rank, rankReversed, holdings, holdingsReversed, price, priceReversed
     }
     
-    init(networkManager: NetworkingManager) {
-        self.coinDataService = CoinDataService(networkManager: networkManager)
-        self.marketDataService = MarketDataService(networkManager: networkManager)
+    init(coinDataService: CoinDataServiceProtocol, marketDataService: MarketDataServiceProtocol) {
+        self.coinDataService = coinDataService
+        self.marketDataService = marketDataService
         addSubscribers()
     }
     
