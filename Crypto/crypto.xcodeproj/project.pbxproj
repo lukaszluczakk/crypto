@@ -354,10 +354,10 @@
 		F4482AC026A885CD00F96725 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F45EC69026B49AA000115F4D /* PortfolioDataService.swift */,
 				F4482AC126A8863500F96725 /* CoinDataService.swift */,
 				F444EE1426ACB22200F6ADA1 /* CoinImageService.swift */,
 				F45EC68526B340F700115F4D /* MarketDataService.swift */,
-				F45EC69026B49AA000115F4D /* PortfolioDataService.swift */,
 				F45196AB26B7224D00EF4E35 /* CoinDetailDataService.swift */,
 			);
 			path = Services;
@@ -536,20 +536,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F4E171E426EA8FD8001C5F9F /* Modifier */ = {
+		F4E171E426EA8FD8001C5F9F /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
 				F4E171E526EA8FFA001C5F9F /* PreviewLayoutComponentModifier.swift */,
 				F4E171E926EA95FD001C5F9F /* PrimaryButtonModifier.swift */,
 				F45F7A4E26EC9B740005E851 /* SecondaryButtonModifier.swift */,
 			);
-			path = Modifier;
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		F4FD4C6026B58F0D0012C9A7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				F4E171E426EA8FD8001C5F9F /* Modifier */,
+				F4E171E426EA8FD8001C5F9F /* Modifiers */,
 				F49C985226D008F500143185 /* Auth */,
 				F49B0DE826BC74710017841B /* Launch */,
 				F474278E26BB317200D30B8B /* Settings */,
