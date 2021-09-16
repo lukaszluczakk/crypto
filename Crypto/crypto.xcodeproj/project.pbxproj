@@ -44,6 +44,23 @@
 		F45F7A4F26EC9B740005E851 /* SecondaryButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A4E26EC9B740005E851 /* SecondaryButtonModifier.swift */; };
 		F45F7A5426ECC5E50005E851 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A5326ECC5E50005E851 /* CommandLine.swift */; };
 		F45F7A5526ECC6880005E851 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A5326ECC5E50005E851 /* CommandLine.swift */; };
+		F463C7DD26F3AF4D00A6910E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A6C2B626A7666F00F7DE33 /* HomeViewModel.swift */; };
+		F463C7DE26F3AF5500A6910E /* MarketDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45EC68526B340F700115F4D /* MarketDataService.swift */; };
+		F463C7DF26F3BD3000A6910E /* MarketDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4892B0D26B0A26F00432A5E /* MarketDataModel.swift */; };
+		F463C7E026F3BDBD00A6910E /* StatistictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4892B0726B093E600432A5E /* StatistictModel.swift */; };
+		F463C7E126F3BDBD00A6910E /* CoinDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45196A726B71E2900EF4E35 /* CoinDetailModel.swift */; };
+		F463C7E226F3BDFA00A6910E /* CoinDetailDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45196AB26B7224D00EF4E35 /* CoinDetailDataService.swift */; };
+		F463C7E326F3BE3D00A6910E /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45AF88626AEDE9E00DF7D1E /* LocalFileManager.swift */; };
+		F463C7E426F3BE3D00A6910E /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45EC69226B5520300115F4D /* HapticManager.swift */; };
+		F463C7E526F3BE3D00A6910E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41B29BD26A47C3800D7FD7E /* Color.swift */; };
+		F463C7E626F3BE3D00A6910E /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A6C2B226A75C9D00F7DE33 /* PreviewProvider.swift */; };
+		F463C7E726F3BE3D00A6910E /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A6C2B426A75FD400F7DE33 /* Double.swift */; };
+		F463C7E826F3BE3D00A6910E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C583BB26B9D24E000BFECA /* Date.swift */; };
+		F463C7E926F3BE3D00A6910E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F474278C26BB2A5F00D30B8B /* String.swift */; };
+		F463C7EA26F3BE3D00A6910E /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45F7A5326ECC5E50005E851 /* CommandLine.swift */; };
+		F463C7EB26F3BE3D00A6910E /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45EC69026B49AA000115F4D /* PortfolioDataService.swift */; };
+		F463C7EC26F3BE3D00A6910E /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F444EE1426ACB22200F6ADA1 /* CoinImageService.swift */; };
+		F463C7ED26F3BF2400A6910E /* PortfolioContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F45EC68D26B49A0500115F4D /* PortfolioContainer.xcdatamodeld */; };
 		F474278D26BB2A5F00D30B8B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F474278C26BB2A5F00D30B8B /* String.swift */; };
 		F474279126BB318700D30B8B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F474279026BB318700D30B8B /* SettingsView.swift */; };
 		F487CD2226EE64E800209B44 /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F487CD2126EE64E800209B44 /* HomeViewTests.swift */; };
@@ -946,11 +963,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F463C7ED26F3BF2400A6910E /* PortfolioContainer.xcdatamodeld in Sources */,
+				F463C7E326F3BE3D00A6910E /* LocalFileManager.swift in Sources */,
+				F463C7E426F3BE3D00A6910E /* HapticManager.swift in Sources */,
+				F463C7E526F3BE3D00A6910E /* Color.swift in Sources */,
+				F463C7E626F3BE3D00A6910E /* PreviewProvider.swift in Sources */,
+				F463C7E726F3BE3D00A6910E /* Double.swift in Sources */,
+				F463C7E826F3BE3D00A6910E /* Date.swift in Sources */,
+				F463C7E926F3BE3D00A6910E /* String.swift in Sources */,
+				F463C7EA26F3BE3D00A6910E /* CommandLine.swift in Sources */,
+				F463C7EB26F3BE3D00A6910E /* PortfolioDataService.swift in Sources */,
+				F463C7EC26F3BE3D00A6910E /* CoinImageService.swift in Sources */,
+				F463C7E226F3BDFA00A6910E /* CoinDetailDataService.swift in Sources */,
+				F463C7E026F3BDBD00A6910E /* StatistictModel.swift in Sources */,
+				F463C7E126F3BDBD00A6910E /* CoinDetailModel.swift in Sources */,
+				F463C7DF26F3BD3000A6910E /* MarketDataModel.swift in Sources */,
+				F463C7DE26F3AF5500A6910E /* MarketDataService.swift in Sources */,
+				F463C7DD26F3AF4D00A6910E /* HomeViewModel.swift in Sources */,
 				F4C6A48C26D6779D00DA7DA0 /* AuthenticationServiceProtocol.swift in Sources */,
 				F4C6A48B26D6779600DA7DA0 /* RegisterViewModel.swift in Sources */,
 				F4D7E47126C19DD7007AB772 /* NetworkManager.swift in Sources */,
-				F4D7E47026C19D76007AB772 /* CoinDataService.swift in Sources */,
 				F4D7E46F26C19C78007AB772 /* NetworkingManager.swift in Sources */,
+				F4D7E47026C19D76007AB772 /* CoinDataService.swift in Sources */,
 				F4D5F9CF26F28E3200045DE1 /* HomeViewModelTests.swift in Sources */,
 				F4D7E46E26C19C54007AB772 /* CoinModel.swift in Sources */,
 				F44F34D926BED2B800FBA42A /* CoinDataServiceTests.swift in Sources */,

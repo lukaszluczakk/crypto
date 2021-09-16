@@ -22,7 +22,7 @@ class HomeViewModel: ObservableObject {
     private var cancellable = Set<AnyCancellable>()
     
     enum SortOption {
-        case  rank, rankReversed, holdings, holdingsReversed, price, priceReversed
+        case rank, rankReversed, holdings, holdingsReversed, price, priceReversed
     }
     
     init(coinDataService: CoinDataServiceProtocol, marketDataService: MarketDataServiceProtocol) {
