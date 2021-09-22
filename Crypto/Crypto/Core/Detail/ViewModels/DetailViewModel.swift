@@ -24,9 +24,10 @@ class DetailViewModel: ObservableObject {
         self.coinDetailDataService = CoinDetailDataService(coin: coin, networkManager: networkManager)
         self.addSubscribers()
     }
-    
+}
+
+extension DetailViewModel {
     private func addSubscribers(){
-        
         coinDetailDataService.$coinDetails
             .combineLatest($coin)
             .map(mapDataToStatistics)
