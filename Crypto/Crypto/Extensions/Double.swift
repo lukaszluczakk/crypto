@@ -15,7 +15,7 @@ extension Double {
         formatter.numberStyle = .currency
         //formatter.locale = .current // default value
         //formatter.currencyCode = "usd"
-        //formatter.currencySymbol = "$"
+        formatter.currencySymbol = "$"
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
         
@@ -33,7 +33,7 @@ extension Double {
         formatter.numberStyle = .currency
         //formatter.locale = .current // default value
         //formatter.currencyCode = "usd"
-        //formatter.currencySymbol = "$"
+        formatter.currencySymbol = "$"
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 6
         

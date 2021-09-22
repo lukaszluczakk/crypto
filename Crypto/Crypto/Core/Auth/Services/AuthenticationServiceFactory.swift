@@ -13,6 +13,6 @@ class AuthenticationServiceFactory {
             return TestAuthenticationService()
         }
         
-        return FirebaseAuthenticationService()
+        return TestAuthenticationService()
     }
 }

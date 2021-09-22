@@ -35,6 +35,8 @@ class HomeViewModelTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
     
+    func test
+    
     class CoinDataServiceMock: CoinDataServiceBase, CoinDataServiceProtocol  {
         private let data: [CoinModel]
         

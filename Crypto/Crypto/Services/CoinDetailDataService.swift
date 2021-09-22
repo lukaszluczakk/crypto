@@ -23,7 +23,7 @@ class CoinDetailDataService {
     
     func getCoinDetails()
     {
-        guard let url = URL(string: " https://api.coingecko.com/api/v3/coins/\(coin.id)?localization=false&tickers=true&market_data=false&community_data=false&developer_data=false&sparkline=false") else {
+        guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/\(coin.id)?localization=false&tickers=true&market_data=false&community_data=false&developer_data=false&sparkline=false") else {
             return
         }
         
@@ -32,6 +32,8 @@ class CoinDetailDataService {
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: networkManager.handleCompletion, receiveValue: { [weak self] (returnedData) in
                 self?.coinDetails = returnedData
+                print("DUPA")
+                print(returnedData)
                 self?.coinDetailSubscription?.cancel()
             })
     }

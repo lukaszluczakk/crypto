@@ -19,7 +19,6 @@ class DetailViewModel: ObservableObject {
     private let coinDetailDataService: CoinDetailDataService
     private var cancellable = Set<AnyCancellable>()
     
-    
     init(coin: CoinModel, networkManager: NetworkingManager) {
         self.coin = coin
         self.coinDetailDataService = CoinDetailDataService(coin: coin, networkManager: networkManager)
@@ -27,6 +26,7 @@ class DetailViewModel: ObservableObject {
     }
     
     private func addSubscribers(){
+        
         coinDetailDataService.$coinDetails
             .combineLatest($coin)
             .map(mapDataToStatistics)
@@ -35,11 +35,10 @@ class DetailViewModel: ObservableObject {
                 self?.additionalStatistics = returnedArrays.additional
             }
             .store(in: &cancellable)
-        
+
         coinDetailDataService.$coinDetails
             .sink { [weak self] (returnedCoinDetails) in
-                self?.coinDescription = "asdasd asasa dasd asd asd asd sadasd asd asd asd asd asdasdas asd asd asd asd asd as das dasdadasd ad asd asd asd asd as dasdasdsad asas as as asd asdasd asd ad asd asd asd asdasdsdsd asd asd."
-                //self?.coinDescription = returnedCoinDetails?.readbleDescription
+                self?.coinDescription = returnedCoinDetails?.description?.en
                 self?.websiteURL = returnedCoinDetails?.links?.homepage?.first
                 self?.redditURl = returnedCoinDetails?.links?.subredditURL
             }
@@ -59,7 +58,7 @@ class DetailViewModel: ObservableObject {
         let priceStat = StatistictModel(title: "Current price", value: price, percentageChange: pricePercentChange)
         
         let marketCap = "$" + (coinModel.marketCap?.formattedWithAbbreviations() ?? "")
-        let marketCapPercentChange = coinModel.marketCapChange24H
+        let marketCapPercentChange = coinModel.marketCapChangePercentage24H
         let marketCapStat = StatistictModel(title: "Market capilization", value: marketCap, percentageChange: marketCapPercentChange )
         
         let rank = "\(coinModel.rank)"

@@ -13,6 +13,6 @@ class SessionServiceFactory {
             return TestSessionService()
         }
         
-        return FirebaseSessionService()
+        return TestSessionService()
     }
 }
