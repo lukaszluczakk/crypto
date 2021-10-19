@@ -39,7 +39,7 @@ struct DetailView: View {
     
     init(coin: CoinModel, networkManager: NetworkingManager) {
         self.networkManager = networkManager
-        _vm = StateObject(wrappedValue: DetailViewModel(coin: coin, networkManager: networkManager))
+        _vm = .init(wrappedValue: DetailViewModel(coin: coin, networkManager: networkManager))
     }
     
     var body: some View {

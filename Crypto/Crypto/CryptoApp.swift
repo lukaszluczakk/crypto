@@ -21,7 +21,7 @@ struct CryptoApp: App {
         let coinDataService = CoinDataService(networkManager: networkManager)
         let marketDataService = MarketDataService(networkManager: networkManager)
         let homeViewModel = HomeViewModel(coinDataService: coinDataService, marketDataService: marketDataService)
-        self._vm = StateObject(wrappedValue: homeViewModel)
+        self._vm = .init(wrappedValue: homeViewModel)
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.accent)]
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.theme.accent)]
         UITableView.appearance().backgroundColor = UIColor.clear
