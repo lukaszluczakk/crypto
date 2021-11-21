@@ -51,7 +51,9 @@ class CoinImageService {
                 guard let self = self, let downloadedImage = returnedImage else { return }
                 self.image = returnedImage
                 self.imageSubscription?.cancel()
-                self.fileManager.saveImage(image: downloadedImage, imageName: self.imageName, folderName: self.folderName)
+                Task.detached(priority: .background) {
+                    self.fileManager.saveImage(image: downloadedImage, imageName: self.imageName, folderName: self.folderName)
+                }
             })
     }
 }
